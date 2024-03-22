@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/cadastroLogoImg"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/logoouite"
+        />
+
+    <com.google.android.material.imageview.ShapeableImageView
+        android:id="@+id/cadastroInputImg"
+        android:layout_width="75dp"
+        android:layout_height="75dp"
+        android:layout_margin="32dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cadastroLogoImg"
+        app:srcCompat="@color/turquoise" />
+
+    <Button
+        android:id="@+id/cadastroBttImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Adicionar foto de perfil"
+
+        app:layout_constraintBottom_toBottomOf="@+id/cadastroInputImg"
+
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/cadastroInputImg"
+        app:layout_constraintTop_toTopOf="@+id/cadastroInputImg" />
+
+    <EditText
+        android:id="@+id/cadastroIntputEmail"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/poppins"
+
+        android:hint="E-mail"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroBttImg"
+        app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroInputImg" />
+
+
+    <EditText
+        android:id="@+id/cadastroIntputSenha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:layout_marginTop="32dp"
+        android:hint="Senha"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputEmail"
+        app:layout_constraintStart_toStartOf="@+id/cadastroIntputEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail" />
+
+    <EditText
+        android:id="@+id/cadastroIntputNome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins"
+        android:hint="Nome"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputSenha"
+        app:layout_constraintStart_toStartOf="@+id/cadastroIntputSenha"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputSenha" />
+
+    <EditText
+        android:id="@+id/cadastroIntputNumero"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins"
+        android:hint="Numero de Celular"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputNome"
+        app:layout_constraintStart_toStartOf="@+id/cadastroIntputNome"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNome" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Salvar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroLogoImg"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/cadastroLogoImg"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNumero" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

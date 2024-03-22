@@ -1,0 +1,44 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Base.Theme.OuitePrototipo" parent="Theme.MaterialComponents.Light">
+        <!-- Customize your light theme here. -->
+        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+
+        <item name="android:colorBackground">@color/lemon_w</item>
+        <item name="colorOnBackground">@color/turquoise</item>
+        <item name="scrimBackground">@color/lemon</item>
+
+        <item name="colorSurfaceContainer">@color/lemon_w</item>
+        <item name="colorSurface">@color/branco</item>
+        <item name="colorOnSurface">@color/turquoise</item>
+
+
+        <item name="colorPrimary">@color/paleGreen</item>
+        <item name="colorOnPrimary">@color/mnbNavy</item>
+        <item name="colorPrimaryContainer">@color/turquoise</item>
+        <item name="colorOnPrimaryContainer">@color/mnbNavy</item>
+
+        <item name="colorSecondary">@color/teal</item>
+        <item name="colorOnSecondary">@color/lemon</item>
+        <item name="colorSecondaryContainer">@color/mnbNavy</item>
+        <item name="colorOnSecondaryContainer">@color/lemon</item>
+
+        <item name="colorError">@color/orange</item>
+        <item name="colorOnError">@color/orange</item>
+        <item name="colorErrorContainer">@color/orangew</item>
+        <item name="colorOnErrorContainer">@color/orangeb</item>
+    </style>
+
+    <style name="Theme.OuitePrototipo" parent="Base.Theme.OuitePrototipo" />
+</resources>
+
+<!--
+ <item name="colorPrimary">@color/Sub3</item>
+        <item name="colorSecondary">@color/branco</item>
+        <item name="colorSurface">@color/branco</item>
+        <item name="android:colorBackground">@color/Pricipal</item>
+        <item name="colorOnPrimary">@color/Pricipal</item>
+        <item name="colorPrimaryContainer">@color/Sub3</item>
+        <item name="colorOnPrimaryContainer">@color/Sub3</item>
+        <item name="colorOnSecondary">@color/Sub2</item>
+        -->

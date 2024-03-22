@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="branco">#FFFFFF</color>
+    <color name="lemon_ww">#f9fff3</color>
+    <color name="lemon_w">#f3ffe8</color>
+    <color name="lemon">#DAFDBA</color>
+    <color name="paleGreen">#9AEBA3</color>
+    <color name="turquoise">#45C4B0</color>
+    <color name="teal">#13678A</color>
+    <color name="mnbNavy">#012030</color>
+
+    <color name="orangew">#FF8247</color>
+    <color name="orange">#B35B32</color>
+    <color name="orangeb">#61311B</color>
+</resources>
