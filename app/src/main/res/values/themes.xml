@@ -1,28 +1,32 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.OuitePrototipo" parent="Theme.MaterialComponents.Light">
+    <style name="Base.Theme.OuitePrototipo" parent="Theme.Material3.Light">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<!--Background-->
+        <item name="android:colorBackground">@color/branco</item>
+        <item name="colorOnBackground">@color/branco</item>
+        <item name="scrimBackground">@color/black</item>
+<!--Outline-->
+        <item name="colorOutline">@color/paleGreen</item>
+        <item name="colorOutlineVariant">@color/lemon</item>
 
-        <item name="android:colorBackground">@color/lemon_w</item>
-        <item name="colorOnBackground">@color/turquoise</item>
-        <item name="scrimBackground">@color/lemon</item>
-
-        <item name="colorSurfaceContainer">@color/lemon_w</item>
-        <item name="colorSurface">@color/branco</item>
-        <item name="colorOnSurface">@color/turquoise</item>
-
-
+<!--Surfaces-->
+        <item name="colorSurfaceDim">@color/lemon_ww</item>
+        <item name="colorSurface">@color/lemon_w</item>
+        <item name="colorSurfaceBright">@color/branco</item>
+        <item name="colorOnSurface">@color/mnbNavy</item>
+<!--Primary-->
         <item name="colorPrimary">@color/paleGreen</item>
-        <item name="colorOnPrimary">@color/mnbNavy</item>
+        <item name="colorOnPrimary">@color/branco</item>
         <item name="colorPrimaryContainer">@color/turquoise</item>
         <item name="colorOnPrimaryContainer">@color/mnbNavy</item>
-
+<!--Secondary-->
         <item name="colorSecondary">@color/teal</item>
         <item name="colorOnSecondary">@color/lemon</item>
         <item name="colorSecondaryContainer">@color/mnbNavy</item>
         <item name="colorOnSecondaryContainer">@color/lemon</item>
-
+<!--Erro-->
         <item name="colorError">@color/orange</item>
         <item name="colorOnError">@color/orange</item>
         <item name="colorErrorContainer">@color/orangew</item>

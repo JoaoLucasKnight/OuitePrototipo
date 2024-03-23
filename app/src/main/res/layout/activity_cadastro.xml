@@ -27,6 +27,7 @@
         app:srcCompat="@color/turquoise" />
 
     <Button
+        style="@style/Widget.Material3.Button.TextButton"
         android:id="@+id/cadastroBttImg"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -39,53 +40,71 @@
         app:layout_constraintStart_toEndOf="@+id/cadastroInputImg"
         app:layout_constraintTop_toTopOf="@+id/cadastroInputImg" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cadastroIntputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
-        android:fontFamily="@font/poppins"
-
-        android:hint="E-mail"
         app:layout_constraintEnd_toEndOf="@+id/cadastroBttImg"
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroInputImg" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastroInputImg">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins"
+            android:hint="Email"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cadastroIntputSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
         android:layout_marginTop="32dp"
-        android:hint="Senha"
         app:layout_constraintEnd_toEndOf="@+id/cadastroIntputEmail"
         app:layout_constraintStart_toStartOf="@+id/cadastroIntputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail">
 
-    <EditText
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins"
+            android:hint="Senha"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cadastroIntputNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins"
-        android:hint="Nome"
         app:layout_constraintEnd_toEndOf="@+id/cadastroIntputSenha"
         app:layout_constraintStart_toStartOf="@+id/cadastroIntputSenha"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputSenha" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputSenha"
+        >
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins"
+            android:hint="Nome de usuario"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/cadastroIntputNumero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:fontFamily="@font/poppins"
-        android:hint="Numero de Celular"
         app:layout_constraintEnd_toEndOf="@+id/cadastroIntputNome"
         app:layout_constraintStart_toStartOf="@+id/cadastroIntputNome"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNome" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNome">
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins"
+            android:hint="Numero de telefone"/>
+    </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"

@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".activity.MainActivity">
 
     <ImageView
         android:id="@+id/LoginImg"
@@ -20,6 +20,7 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LoginInputNome"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="@+id/LoginImg"
@@ -30,20 +31,22 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins"
-            android:hint="E-mail ou usuario"
-            />
+            android:hint="E-mail ou usuario" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/LoginInputSenha"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
 
         app:layout_constraintEnd_toEndOf="@+id/LoginImg"
         app:layout_constraintStart_toStartOf="@+id/LoginImg"
-        app:layout_constraintTop_toBottomOf="@+id/LoginInputNome">
+        app:layout_constraintTop_toBottomOf="@+id/LoginInputNome"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -55,22 +58,26 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/button2"
+        android:id="@+id/LoginBttEntrar"
+        style="?attr/materialButtonOutlinedStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:layout_marginTop="32dp"
-        android:text="logar"
+        android:text="Entrar"
         app:layout_constraintEnd_toEndOf="@+id/LoginImg"
         app:layout_constraintStart_toStartOf="@+id/LoginImg"
         app:layout_constraintTop_toBottomOf="@+id/LoginInputSenha" />
 
     <Button
-        android:id="@+id/button"
+
+        android:id="@+id/LoginBttCadastrar"
+        style="@style/Widget.Material3.Button.TextButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="260dp"
-        android:text="Ainda não tem cadastro"
+        android:textSize="12dp"
+        android:text="Ainda não tem cadastro?"
         android:fontFamily="@font/poppins"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -78,6 +85,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/LoginImg"
         app:layout_constraintVertical_bias="0.0" />
+
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
