@@ -7,6 +7,7 @@ android {
     namespace = "nf3.ouiteprototipo"
     compileSdk = 34
 
+
     defaultConfig {
         applicationId = "nf3.ouiteprototipo"
         minSdk = 29
@@ -39,6 +40,7 @@ android {
 }
 
 dependencies {
+    val fragment_version = "1.6.2"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -46,6 +48,7 @@ dependencies {
     implementation(libs.androidx.activity)
     implementation(libs.androidx.constraintlayout)
     implementation ("com.google.android.material:material:<version>")
+    implementation("androidx.fragment:fragment-ktx:$fragment_version")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
