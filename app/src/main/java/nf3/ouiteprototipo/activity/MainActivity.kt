@@ -27,8 +27,5 @@ class MainActivity : AppCompatActivity(R.layout.activity_login) {
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
-
-
-
     }
 }

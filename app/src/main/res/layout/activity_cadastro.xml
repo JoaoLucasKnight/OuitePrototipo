@@ -41,7 +41,7 @@
         app:layout_constraintTop_toTopOf="@+id/cadastroInputImg" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputEmail"
+        android:id="@+id/cadastroLayoutInputEmail"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
@@ -49,6 +49,7 @@
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
         app:layout_constraintTop_toBottomOf="@+id/cadastroInputImg">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cadastroInputEmail"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins"
@@ -57,15 +58,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputSenha"
+        android:id="@+id/cadastroLayoutInputSenha"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputEmail"
-        app:layout_constraintStart_toStartOf="@+id/cadastroIntputEmail"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail">
+        app:layout_constraintEnd_toEndOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintStart_toStartOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputEmail">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cadastroInputSenha"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins"
@@ -73,15 +75,16 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputNome"
+        android:id="@+id/cadastroLayoutInputNome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputSenha"
-        app:layout_constraintStart_toStartOf="@+id/cadastroIntputSenha"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputSenha"
+        app:layout_constraintEnd_toEndOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintStart_toStartOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputSenha"
         >
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cadastroInputNome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins"
@@ -89,14 +92,15 @@
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputNumero"
+        android:id="@+id/cadastroLayoutInputNumero"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/cadastroIntputNome"
-        app:layout_constraintStart_toStartOf="@+id/cadastroIntputNome"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNome">
+        app:layout_constraintEnd_toEndOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintStart_toStartOf="@+id/cadastroLayoutInputEmail"
+        app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputNome">
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/cadastroInputNumero"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins"
@@ -105,6 +109,7 @@
 
     <Button
         style="?attr/materialButtonOutlinedStyle"
+        android:id="@+id/cadastroBttSalvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
@@ -113,7 +118,7 @@
         app:layout_constraintEnd_toEndOf="@+id/cadastroLogoImg"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cadastroLogoImg"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputNumero" />
+        app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputNumero" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
