@@ -17,5 +17,26 @@ class CadastroActivity : AppCompatActivity(R.layout.activity_cadastro){
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        binding.cadastroBttSalvar.setOnClickListener(){
+            val intent = Intent(this, HomeActivity::class.java)
+            val user = criarUser()
+            intent.putExtra("user", user.nome)
+            startActivity(intent)
+        }
+
+    }
+
+    private fun criarUser():Pessoa{
+        val email = binding.cadastroInputEmail.text.toString()
+        val senha = binding.cadastroInputSenha.text.toString()
+        val nome = binding.cadastroInputNome.text.toString()
+        val telefone = binding.cadastroInputNumero.text.toString()
+
+        return Pessoa(
+            email = email,
+            senha = senha,
+            nome = nome,
+            telefone = telefone
+        )
     }
 }
