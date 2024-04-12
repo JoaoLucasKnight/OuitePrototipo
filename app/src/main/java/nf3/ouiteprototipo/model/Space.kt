@@ -1,10 +1,20 @@
 package nf3.ouiteprototipo.model
 
-data class Space(
-    val id: Long,
-    val name: String,
-    val description: String,
-    val way: String
+class Space(
+    val nome: String? = null,
+    val caminho: String? = null
 ){
+    companion object{
+        private val lugares = mutableListOf(
+            Space(
+                nome = "Quarto",
+                caminho = ""
+            ),
+            Space(
+                nome = "Banheiro",
+                caminho = "Quarto>"
+            )
+        )
+    }
 
 }

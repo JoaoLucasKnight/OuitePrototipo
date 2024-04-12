@@ -36,12 +36,14 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/card_default_nome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Quarto"
                     android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                 <TextView
+                    android:id="@+id/card_default_caminho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"

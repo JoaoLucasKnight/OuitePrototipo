@@ -41,6 +41,7 @@ android {
 
 dependencies {
     val fragment_version = "1.6.2"
+    val nav_version = "2.7.7"
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
@@ -49,6 +50,8 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation ("com.google.android.material:material:<version>")
     implementation("androidx.fragment:fragment-ktx:$fragment_version")
+    implementation("androidx.navigation:navigation-fragment-ktx:$nav_version")
+    implementation("androidx.navigation:navigation-ui-ktx:$nav_version")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/cont_login_fragment">
+
+    <fragment
+        android:id="@+id/cont_login_fragment"
+        android:name="nf3.ouiteprototipo.fragment.LoginFragment"
+        android:label="LoginFragment"
+        tools:layout="@layout/login"/>
+    <fragment
+        android:id="@+id/cont_cadastro_fragment"
+        android:name="nf3.ouiteprototipo.fragment.CadastroFragment"
+        android:label="CadastroFragment"
+        tools:layout="@layout/cadastro"/>
+
+    <fragment
+        android:id="@+id/cont_home_fragment"
+        android:name="nf3.ouiteprototipo.fragment.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/home" />
+
+
+</navigation>
