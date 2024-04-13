@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
@@ -36,12 +36,14 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
+                    android:id="@+id/card_historico_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Cabo P2-P2"
                     android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                 <TextView
+                    android:id="@+id/card_historico_caminho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -50,6 +52,7 @@
                     android:textColor="?android:attr/textColorSecondary" />
             </LinearLayout>
             <TextView
+                android:id="@+id/card_default_data"
                 android:layout_width="62dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

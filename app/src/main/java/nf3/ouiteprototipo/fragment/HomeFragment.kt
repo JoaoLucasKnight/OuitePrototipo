@@ -22,7 +22,7 @@ class HomeFragment: Fragment(R.layout.home) {
         binding = HomeBinding.inflate(inflater,container,false)
 
         parentFragmentManager.commit {
-            add<Space>(binding.fragSpace.id)
+            add<Spaces>(binding.fragSpace.id)
             add<History>(binding.fragHistory.id)
             add<Add>(binding.fragAdd.id)
         }

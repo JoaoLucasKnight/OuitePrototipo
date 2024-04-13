@@ -49,34 +49,37 @@
         android:id="@+id/fragSpace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
         app:layout_constraintStart_toStartOf="@+id/welcome"
         app:layout_constraintTop_toBottomOf="@+id/layoutPesquisa"
         tools:layout="@layout/spaces" />
 
+    <!--        tools:layout="@layout/historico" />-->
+
+
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragHistory"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
-        app:layout_constraintStart_toStartOf="@+id/layoutPesquisa"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/fragSpace"
-        tools:layout="@layout/history" />
-
-
-    <ImageView
-        android:id="@+id/cadastroLogoImg"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:src="@drawable/logoouite"
         app:layout_constraintBottom_toBottomOf="parent"
-
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/fragHistory"
+        app:layout_constraintEnd_toEndOf="@+id/shapeableImageView"
+        app:layout_constraintStart_toStartOf="@+id/welcome"
+        tools:layout="@layout/historico"
         />
+
+<!--    <ImageView-->
+<!--        android:id="@+id/cadastroLogoImg"-->
+<!--        android:layout_width="100dp"-->
+<!--        android:layout_height="100dp"-->
+<!--        android:src="@drawable/logoouite"-->
+<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/fragHistory"-->
+<!--        />-->
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragAdd"
