@@ -11,7 +11,7 @@ import nf3.ouiteprototipo.databinding.HistoricoBinding
 import nf3.ouiteprototipo.model.ManipulaHistorico
 import nf3.ouiteprototipo.recycler.AdapterHistorico
 
-class History: Fragment(R.layout.historico) {
+class ListHistory: Fragment(R.layout.historico) {
     private val adaptado by lazy {
         context?.let {
             AdapterHistorico(it, lista = ManipulaHistorico.getHistorico())

@@ -5,33 +5,28 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import nf3.ouiteprototipo.R
-import nf3.ouiteprototipo.databinding.LoginBinding
+import nf3.ouiteprototipo.databinding.AddBinding
 
-class LoginFragment: Fragment(R.layout.login) {
+class AddBtt: Fragment(R.layout.add) {
 
-    private lateinit var binding: LoginBinding
-
+    private lateinit var binding: AddBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = LoginBinding.inflate(inflater,container ,false)
+        binding = AddBinding.inflate(inflater,container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val controller = view.findNavController()
-        binding.LoginBttCadastrar.setOnClickListener{
-            controller.navigate(R.id.cont_cadastro_fragment)
-        }
-
-        binding.LoginBttEntrar.setOnClickListener{
-            controller.navigate(R.id.cont_home_fragment)
+        binding.fragAdd.setOnClickListener{
+            findNavController().navigate(R.id.cont_addForm_fragment)
         }
     }
+
 }

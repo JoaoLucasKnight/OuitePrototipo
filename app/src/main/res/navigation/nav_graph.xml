@@ -22,5 +22,12 @@
         android:label="HomeFragment"
         tools:layout="@layout/home" />
 
+    <fragment
+        android:id="@+id/cont_addForm_fragment"
+        android:name="nf3.ouiteprototipo.fragment.AddFormaFragment"
+        android:label="AddFormFragment"
+        tools:layout="@layout/adicionar_form"
+        />
+
 
 </navigation>

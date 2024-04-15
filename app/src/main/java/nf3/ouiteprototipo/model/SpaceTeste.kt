@@ -11,14 +11,6 @@ class ManipulaSpace {
             Space(
                 nome = "Quarto",
                 caminho = ""
-            ),
-            Space(
-                nome = "Banheiro",
-                caminho = "Quarto>"
-            ),
-            Space(
-                nome = "Banheiro",
-                caminho = "Quarto>"
             )
         )
 

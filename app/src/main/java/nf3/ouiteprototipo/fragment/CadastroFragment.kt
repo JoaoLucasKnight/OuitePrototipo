@@ -5,13 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.commit
 import androidx.navigation.fragment.findNavController
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.CadastroBinding
-import nf3.ouiteprototipo.databinding.LoginBinding
-import nf3.ouiteprototipo.model.Pessoa
-import kotlin.concurrent.fixedRateTimer
 
 
 class CadastroFragment: Fragment (R.layout.cadastro) {

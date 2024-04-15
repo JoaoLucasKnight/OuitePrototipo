@@ -22,9 +22,9 @@ class HomeFragment: Fragment(R.layout.home) {
         binding = HomeBinding.inflate(inflater,container,false)
 
         parentFragmentManager.commit {
-            add<Spaces>(binding.fragSpace.id)
-            add<History>(binding.fragHistory.id)
-            add<Add>(binding.fragAdd.id)
+            add<ListSpaces>(binding.fragSpace.id)
+            add<ListHistory>(binding.fragHistory.id)
+            add<AddBtt>(binding.fragAdd.id)
         }
         return binding.root
     }
@@ -32,5 +32,6 @@ class HomeFragment: Fragment(R.layout.home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.welcome.text = "Seja Bem vindo a Ouitê, ${Pesso.nome}"
+
     }
 }

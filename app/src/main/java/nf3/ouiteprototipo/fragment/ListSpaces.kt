@@ -11,7 +11,7 @@ import nf3.ouiteprototipo.databinding.SpacesBinding
 import nf3.ouiteprototipo.model.ManipulaSpace
 import nf3.ouiteprototipo.recycler.AdapterSpace
 
-class Spaces: Fragment(R.layout.spaces){
+class ListSpaces: Fragment(R.layout.spaces){
 
     private val adaptado by lazy {
         context?.let {
