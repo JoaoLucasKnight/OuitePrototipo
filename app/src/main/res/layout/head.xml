@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
         tools:text="Bem vindo ao Ouite"
-        app:layout_constraintBottom_toBottomOf="@+id/shapeableImageView"
+        app:layout_constraintBottom_toBottomOf="@+id/home_imgPerfil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/shapeableImageView" />
+        app:layout_constraintTop_toTopOf="@+id/home_imgPerfil" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/shapeableImageView"
+        android:id="@+id/home_imgPerfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"

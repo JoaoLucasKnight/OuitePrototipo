@@ -7,8 +7,10 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import androidx.navigation.fragment.findNavController
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.HomeBinding
+import nf3.ouiteprototipo.model.User
 
 class HomeFragment: Fragment(R.layout.home) {
 
@@ -31,7 +33,17 @@ class HomeFragment: Fragment(R.layout.home) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        binding.welcome.text = "Seja Bem vindo a Ouitê, ${Pesso.nome}"
+        binding.welcome.text = "Seja Bem vindo a Ouitê, ${User.nome}"
+
+        binding.homeImgPerfil.run {
+            this.setImageResource(R.drawable.perfil)
+            this.setOnClickListener{
+                findNavController().navigate(R.id.cont_cadastro_fragment)
+            }
+        }
+
+
+
 
     }
 }

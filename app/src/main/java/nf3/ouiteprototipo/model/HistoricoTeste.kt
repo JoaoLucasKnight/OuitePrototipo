@@ -18,20 +18,6 @@ class ManipulaHistorico {
                 titulo = "Controle RGB",
                 caminho = "Quarto>Escrivaninha>Gaveta1",
                 data = "14/08"
-            ),
-            Historico(
-                titulo = "HeadSeat",
-                caminho = "Quarto>ArmarioAuxiliar>Porta3>Prateleira1",
-                data = "14/07"
-            ),Historico(
-                titulo = "HeadSeat",
-                caminho = "Quarto>ArmarioAuxiliar>Porta3>Prateleira1",
-                data = "14/07"
-            ),
-            Historico(
-                titulo = "HeadSeat",
-                caminho = "Quarto>ArmarioAuxiliar>Porta3>Prateleira1",
-                data = "14/07"
             )
         )
 

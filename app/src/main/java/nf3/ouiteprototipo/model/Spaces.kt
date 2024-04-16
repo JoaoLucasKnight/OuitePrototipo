@@ -5,8 +5,7 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Spaces(
-    @PrimaryKey(autoGenerate = true)
-    var id: Long,
+    @PrimaryKey(autoGenerate = true) var id: Long = 0L,
     var nome: String,
     var descricao: String,
     var caminh: String
