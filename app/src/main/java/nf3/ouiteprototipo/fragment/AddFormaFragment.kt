@@ -8,4 +8,4 @@ import androidx.fragment.app.Fragment
 import nf3.ouiteprototipo.R
 
 class AddFormaFragment: Fragment(R.layout.adicionar_form) {
-}
+    }

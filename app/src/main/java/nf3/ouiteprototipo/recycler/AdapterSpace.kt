@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import nf3.ouiteprototipo.databinding.CardDefautBinding
-
 import nf3.ouiteprototipo.model.Space
 
 class AdapterSpace(
@@ -20,7 +19,7 @@ class AdapterSpace(
     ): RecyclerView.ViewHolder(binding.root){
         fun vincula(space: Space){
             val nome = binding.cardDefaultNome
-            nome.text = space.nome
+            nome.text = space.nomeId
             val caminho = binding.cardDefaultCaminho
             caminho.text = space.caminho
         }

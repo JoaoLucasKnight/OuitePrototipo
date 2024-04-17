@@ -6,16 +6,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.room.Room
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SpacesBinding
-import nf3.ouiteprototipo.model.ManipulaSpace
 import nf3.ouiteprototipo.recycler.AdapterSpace
+import nf3.ouiteprototipo.room.AppDatabase
+import nf3.ouiteprototipo.room.dao.SpaceDAO
 
 class ListSpaces: Fragment(R.layout.spaces){
 
+
+
     private val adaptado by lazy {
         context?.let {
-            AdapterSpace(it, lista = ManipulaSpace.getSpaces())
+            it.deleteDatabase("ouite.db")
+            val db = AppDatabase.instancia(it)
+            AdapterSpace(it, lista = db.spaceDao().getAll())
+
         }?: throw IllegalArgumentException("Contexto Invalido ")
     }
     private lateinit var binding: SpacesBinding
@@ -35,5 +42,9 @@ class ListSpaces: Fragment(R.layout.spaces){
             this.adapter = adaptado
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false )
         }
+    }
+
+    fun pegaBancoDeDados(){
+        parentFragmentManager
     }
 }

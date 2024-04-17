@@ -5,8 +5,9 @@ import androidx.room.PrimaryKey
 
 @Entity
 data class Box(
-    @PrimaryKey(autoGenerate = true) var id: Long = 0L,
-    var nome: String,
+    @PrimaryKey
+    var nomeId: String,
     var descricao: String,
-    var caminh: String
+    var caminh: String,
+    var paiNameId: String
 )
