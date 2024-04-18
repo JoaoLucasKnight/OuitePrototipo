@@ -12,17 +12,13 @@ import nf3.ouiteprototipo.room.dao.SpaceDAO
 @Database(entities = [Space::class, Box::class, Artifact::class], version = 1 )
 abstract class AppDatabase: RoomDatabase() {
     abstract fun spaceDao(): SpaceDAO
-
-    fun limparBancoDeDados() {
-        clearAllTables()
-    }
     companion object{
         fun instancia(context: Context): AppDatabase{
             return Room.databaseBuilder(
                 context,
                 AppDatabase::class.java,
                 "ouite.db"
-            ).fallbackToDestructiveMigration()
+            )
                 .allowMainThreadQueries()
                 .build()
         }

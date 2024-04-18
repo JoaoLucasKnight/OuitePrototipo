@@ -1,10 +1,13 @@
 package nf3.ouiteprototipo.fragment
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import nf3.ouiteprototipo.R
@@ -19,10 +22,8 @@ class ListSpaces: Fragment(R.layout.spaces){
 
     private val adaptado by lazy {
         context?.let {
-            it.deleteDatabase("ouite.db")
             val db = AppDatabase.instancia(it)
             AdapterSpace(it, lista = db.spaceDao().getAll())
-
         }?: throw IllegalArgumentException("Contexto Invalido ")
     }
     private lateinit var binding: SpacesBinding
@@ -38,13 +39,18 @@ class ListSpaces: Fragment(R.layout.spaces){
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val controller = view.findNavController()
+
         binding.listaSpace.run {
+            adaptado.quandoclica =
+                object : AdapterSpace.Quandoclica{
+                    override fun click() {
+                        controller.navigate(R.id.cont_cadastro_fragment)
+                    }
+                }
             this.adapter = adaptado
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false )
         }
-    }
 
-    fun pegaBancoDeDados(){
-        parentFragmentManager
     }
 }

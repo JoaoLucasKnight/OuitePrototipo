@@ -10,6 +10,8 @@ interface SpaceDAO {
     @Query("SELECT * FROM Space")
     fun getAll(): List<Space>
 
+    @Query("SELECT * FROM Space WHERE nomeId = :id")
+    fun getId(id: String): Space?
     @Insert
     fun salvar(space:Space)
 }

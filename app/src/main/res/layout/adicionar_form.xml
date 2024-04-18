@@ -7,7 +7,7 @@
     >
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/textView_tipo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -19,135 +19,122 @@
     <RadioGroup
         android:id="@+id/radio_cont"
         android:layout_width="match_parent"
-        android:layout_height="120dp"
+        android:layout_height="100dp"
+        android:checkedButton="@id/space_radio_btt"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView3">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tipo"
+        android:orientation="horizontal">
+        <RadioButton
+            android:id="@+id/space_radio_btt"
+            android:layout_width="120dp"
             android:layout_height="match_parent"
-            android:orientation="horizontal">
-
-            <RadioButton
-                android:id="@+id/space_radio_btt"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-                android:checkedButton="@id/space_radio_btt"
-                app:layout_constraintStart_toStartOf="parent"
-                android:text="Lugar"
-
-                />
-            <RadioButton
-                android:id="@+id/box_radio_btt"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-
-                app:layout_constraintStart_toEndOf="@+id/space_radio_btt"
-                app:layout_constraintEnd_toStartOf="@+id/artifact_radio_btt"
-                android:text="Caixa"
-                />
-            <RadioButton
-                android:id="@+id/artifact_radio_btt"
-                android:layout_width="80dp"
-                android:layout_height="match_parent"
-
-                app:layout_constraintEnd_toEndOf="parent"
-                android:text="Objeto"
-
-                />
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
+            app:layout_constraintStart_toStartOf="parent"
+            android:text="Lugar" />
+        <RadioButton
+            android:id="@+id/box_radio_btt"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toEndOf="@+id/space_radio_btt"
+            app:layout_constraintEnd_toStartOf="@+id/artifact_radio_btt"
+            android:text="Caixa" />
+        <RadioButton
+            android:id="@+id/artifact_radio_btt"
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:text="Objeto" />
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textViewdsaf"
+        android:id="@+id/textView_pai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="16dp"
         android:text="Lugar ou caixa, que ele está"
         android:textAppearance="?attr/textAppearanceTitleLarge"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
         app:layout_constraintTop_toBottomOf="@+id/radio_cont" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputEmail"
+        android:id="@+id/layout_pai"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/radio_cont"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/textViewdsaf">
+        app:layout_constraintTop_toBottomOf="@+id/textView_pai">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_pai"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/textView_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Nome"
         android:textAppearance="?attr/textAppearanceTitleLarge"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_pai" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputEmail2"
+        android:id="@+id/layout_nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/radio_cont"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/textView4">
+        app:layout_constraintTop_toBottomOf="@+id/textView_nome">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_nome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/textView_descricao"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
         android:text="Notas ou foto"
         android:textAppearance="?attr/textAppearanceTitleLarge"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail2" />
+        app:layout_constraintTop_toBottomOf="@+id/layout_nome" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/cadastroIntputEmail4"
+        android:id="@+id/layou_descricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/radio_cont"
         app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/textView5">
+        app:layout_constraintTop_toBottomOf="@+id/textView_descricao">
 
         <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_descricao"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
+        android:id="@+id/add_salvar_btt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Salvar"
-
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cadastroIntputEmail4" />
+        app:layout_constraintTop_toBottomOf="@+id/layou_descricao" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
