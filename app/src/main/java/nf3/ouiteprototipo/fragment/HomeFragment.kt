@@ -20,7 +20,7 @@ class HomeFragment: Fragment(R.layout.home) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = HomeBinding.inflate(inflater,container,false)
 
         parentFragmentManager.commit {

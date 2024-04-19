@@ -1,8 +1,8 @@
 package nf3.ouiteprototipo.model
 
 import androidx.room.Entity
-import androidx.room.ForeignKey
 import androidx.room.PrimaryKey
+
 
 @Entity
 data class Space(
@@ -12,3 +12,4 @@ data class Space(
     val caminho: String,
     val paiNameId: String?
 )
+

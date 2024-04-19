@@ -17,7 +17,7 @@ class AddBtt: Fragment(R.layout.add) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = AddBinding.inflate(inflater,container, false)
         return binding.root
     }
@@ -28,5 +28,4 @@ class AddBtt: Fragment(R.layout.add) {
             findNavController().navigate(R.id.cont_addForm_fragment)
         }
     }
-
 }

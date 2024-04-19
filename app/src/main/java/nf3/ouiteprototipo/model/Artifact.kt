@@ -10,5 +10,4 @@ data class Artifact(
     var descricao: String,
     var caminh: String,
     var paiNameId: String
-) {
-}
+)

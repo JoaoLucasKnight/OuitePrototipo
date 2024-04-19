@@ -1,41 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/artifact_textView_way"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Caminho>Caminh>Caminho"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/detalhes_contCard"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="wrap_content"
         android:layout_marginVertical="32dp"
         android:layout_marginHorizontal="32dp"
-        android:elevation="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/artifact_textView_way"
+        android:elevation="6dp"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-       >
+        >
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/artifact_textView_title"
+                android:id="@+id/detalhes_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="8dp"
-                android:text="Cabo P2-P2"
+                tools:text="Cabo P2-P2"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
                 android:textSize="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -43,7 +37,7 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
-                android:id="@+id/artifact_textView_nota"
+                android:id="@+id/detalhes_textView_nota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
@@ -51,10 +45,10 @@
                 android:text="Nota:"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artifact_textView_title" />
+                app:layout_constraintTop_toBottomOf="@+id/detalhes_textView_title" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/artifact_card_notas"
+                android:id="@+id/detalhes_cardCont_notas"
                 android:layout_width="match_parent"
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="16dp"
@@ -62,18 +56,19 @@
 
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artifact_textView_nota">
+                app:layout_constraintTop_toBottomOf="@+id/detalhes_textView_nota">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/detalhes_textView_anotacao"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="16dp"
                         android:layout_marginVertical="16dp"
-                        android:text="Descrição e anotações "
+                        tools:text="Descrição e anotações "
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -85,42 +80,51 @@
             </com.google.android.material.card.MaterialCardView>
 
             <TextView
-                android:id="@id/artifact_textView_historico"
+                android:id="@+id/detalhes_textView_caminho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="16dp"
-                android:layout_marginTop="32dp"
-                android:text="Historico"
-                android:textSize="16dp"
-
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artifact_card_notas" />
-
-            <androidx.fragment.app.FragmentContainerView
-                android:id="@+id/status"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-                app:layout_constraintEnd_toEndOf="parent"
+                android:text="Caminho:"
+                android:textSize="16dp"
+                app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
+                app:layout_constraintTop_toBottomOf="@id/detalhes_cardCont_notas" />
+
+
+            <TextView
+                android:id="@+id/input_caminho"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="@+id/detalhes_cardCont_notas"
+                app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
+                app:layout_constraintTop_toBottomOf="@id/detalhes_textView_caminho"
+                tools:text="Caminho..." />
+
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginStart="48dp"
+                android:text="Editar"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/artifact_textView_historico"
-                tools:layout="@layout/card_artifact_status" />
+                app:layout_constraintTop_toBottomOf="@id/input_caminho" />
 
             <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
-                android:text="Pegar"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/status" />
+                android:layout_marginEnd="48dp"
+                android:text="Remover"
+                app:layout_constraintEnd_toEndOf="parent
+"
+                app:layout_constraintTop_toBottomOf="@id/input_caminho" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     </com.google.android.material.card.MaterialCardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

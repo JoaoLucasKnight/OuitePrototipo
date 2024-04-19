@@ -29,5 +29,11 @@
         tools:layout="@layout/adicionar_form"
         />
 
+    <fragment
+        android:id="@+id/cont_cardDetalhes_frament"
+        android:name="nf3.ouiteprototipo.fragment.SpaceBoxDetalhes"
+        android:label="Space_Box_detalhes"
+        tools:layout="@layout/card_detalhes"/>
+
 
 </navigation>

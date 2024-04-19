@@ -1,20 +1,18 @@
 package nf3.ouiteprototipo.fragment
 
 import android.os.Bundle
-import android.util.Log
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.room.Room
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SpacesBinding
+import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterSpace
 import nf3.ouiteprototipo.room.AppDatabase
-import nf3.ouiteprototipo.room.dao.SpaceDAO
 
 class ListSpaces: Fragment(R.layout.spaces){
 
@@ -32,7 +30,7 @@ class ListSpaces: Fragment(R.layout.spaces){
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = SpacesBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -44,8 +42,11 @@ class ListSpaces: Fragment(R.layout.spaces){
         binding.listaSpace.run {
             adaptado.quandoclica =
                 object : AdapterSpace.Quandoclica{
-                    override fun click() {
-                        controller.navigate(R.id.cont_cadastro_fragment)
+                    override fun click(space: Space) {
+                        val args = Bundle().apply {
+                            putString("name", space.nomeId)
+                        }
+                        controller.navigate(R.id.cont_cardDetalhes_frament,args)
                     }
                 }
             this.adapter = adaptado

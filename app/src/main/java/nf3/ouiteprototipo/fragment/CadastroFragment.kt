@@ -21,7 +21,7 @@ class CadastroFragment: Fragment (R.layout.cadastro) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = CadastroBinding.inflate(inflater,container, false)
         return binding.root
     }

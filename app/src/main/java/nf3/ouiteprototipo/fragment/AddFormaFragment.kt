@@ -19,31 +19,24 @@ class AddFormaFragment: Fragment(R.layout.adicionar_form) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View{
         binding = AdicionarFormBinding.inflate(inflater,container, false)
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val db = AppDatabase.instancia(context?.let {
-            it
-        }?:throw IllegalArgumentException("Contexto Invalido ")
-        )
-        binding.addSalvarBtt.setOnClickListener {
-            db.spaceDao().salvar(
-                Space(
-                    nomeId = binding.inputNome.text.toString(),
-                    descricao = binding.inputDescricao.text.toString(),
-                    caminho = ">${binding.inputNome.text.toString()}",
-                    paiNameId = binding.inputPai.text.toString()
+        val db = AppDatabase
+            .instancia(context?:throw IllegalArgumentException("Contexto Invalido "))
 
+        binding.addSalvarBtt.setOnClickListener {
+            db.spaceDao().salvar(Space(
+                nomeId = binding.inputNome.text.toString(),
+                descricao = binding.inputDescricao.text.toString(),
+                caminho = ">${binding.inputNome.text.toString()}",
+                paiNameId = binding.inputPai.text.toString()
                 )
             )
         }
-
     }
-
-
-
-    }
+}

@@ -23,7 +23,7 @@ class ListHistory: Fragment(R.layout.historico) {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         binding = HistoricoBinding.inflate(inflater,container,false)
         return binding.root
     }
