@@ -9,7 +9,7 @@ data class Space(
     @PrimaryKey
     val nomeId: String,
     val descricao: String,
-    val caminho: String,
-    val paiNameId: String?
+    val paiNameId: String?,
+    var caminho: String?
 )
 
