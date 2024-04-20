@@ -50,7 +50,7 @@ class AddFormaFragment: Fragment(R.layout.adicionar_form) {
     fun buildCaminho(paiId: String?, id: String,db: AppDatabase): String{
         val caminho: String
         if(paiId == null || paiId == ""){
-            caminho = ">${id}"
+            caminho = "${id}"
         }else{
             caminho = "${db.spaceDao().getCaminho(paiId)}>${id}"
         }

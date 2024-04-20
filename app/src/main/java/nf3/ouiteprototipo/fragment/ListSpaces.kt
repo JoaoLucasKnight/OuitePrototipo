@@ -16,8 +16,6 @@ import nf3.ouiteprototipo.room.AppDatabase
 
 class ListSpaces: Fragment(R.layout.spaces){
 
-
-
     private val adaptado by lazy {
         context?.let {
             val db = AppDatabase.instancia(it)
@@ -40,9 +38,8 @@ class ListSpaces: Fragment(R.layout.spaces){
         val controller = view.findNavController()
 
         binding.listaSpace.run {
-            adaptado.quandoclica =
-                object : AdapterSpace.Quandoclica{
-                    override fun click(space: Space) {
+            adaptado.quandoPressiona = object : AdapterSpace.QuandoPressiona{
+                    override fun pressiona(space: Space) {
                         val args = Bundle().apply {
                             putString("name", space.nomeId)
                         }

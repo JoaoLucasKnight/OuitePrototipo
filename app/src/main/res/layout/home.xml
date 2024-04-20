@@ -14,12 +14,12 @@
         android:fontFamily="@font/poppins_light"
         android:layout_marginStart="32dp"
         tools:text="Bem vindo ao Ouite"
-        app:layout_constraintBottom_toBottomOf="@+id/home_imgPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_imgPerfil" />
+        app:layout_constraintTop_toTopOf="@+id/homeImgPerfil" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/home_imgPerfil"
+        android:id="@+id/homeImgPerfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
@@ -33,9 +33,9 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        app:layout_constraintEnd_toEndOf="@+id/home_imgPerfil"
+        app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
-        app:layout_constraintTop_toBottomOf="@id/home_imgPerfil">
+        app:layout_constraintTop_toBottomOf="@+id/homeImgPerfil">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/inputPesquisa"
@@ -51,7 +51,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/home_imgPerfil"
+        app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
         app:layout_constraintTop_toBottomOf="@+id/layoutPesquisa"
         tools:layout="@layout/spaces" />
@@ -66,7 +66,7 @@
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/fragSpace"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/home_imgPerfil"
+        app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
         tools:layout="@layout/historico"
         />

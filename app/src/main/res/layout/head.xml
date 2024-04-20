@@ -11,12 +11,12 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
         tools:text="Bem vindo ao Ouite"
-        app:layout_constraintBottom_toBottomOf="@+id/home_imgPerfil"
+        app:layout_constraintBottom_toBottomOf="@+id/escopo_imgPerfil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/home_imgPerfil" />
+        app:layout_constraintTop_toTopOf="@+id/escopo_imgPerfil" />
 
     <com.google.android.material.imageview.ShapeableImageView
-        android:id="@+id/home_imgPerfil"
+        android:id="@+id/escopo_imgPerfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
         app:layout_constraintEnd_toEndOf="parent"

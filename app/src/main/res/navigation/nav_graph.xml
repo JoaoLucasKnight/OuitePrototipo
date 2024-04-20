@@ -35,5 +35,11 @@
         android:label="Space_Box_detalhes"
         tools:layout="@layout/card_detalhes"/>
 
+    <fragment
+        android:id="@+id/cont_pesquisaEscopo_fragment"
+        android:name="nf3.ouiteprototipo.fragment.PesquisaEscopoFragment"
+        android:label="Pesquisa_escopo"
+        tools:layout="@layout/pesquisa_escopo"/>
+
 
 </navigation>
