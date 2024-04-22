@@ -10,16 +10,26 @@ import nf3.ouiteprototipo.model.Space
 class AdapterEscopo(
     private val context: Context,
     lista: List<Space>,
-    var quandoclica: Quandoclica =
-        object :Quandoclica{
-            override fun click(space: Space){
+    var quandoPressiona: QuandoPressiona =
+        object :QuandoPressiona{
+            override fun pressiona(space: Space){
+            }
+        },
+
+    var quandoClica: QuandoClica =
+        object :QuandoClica{
+            override fun clica(space: Space){
             }
         }
 ): RecyclerView.Adapter<AdapterEscopo.ViewHolder>() {
 
     private val lista = lista.toMutableList()
-    interface Quandoclica{
-        fun click(space: Space)
+    interface QuandoClica{
+        fun clica(space: Space)
+    }
+
+    interface QuandoPressiona{
+        fun pressiona(space: Space)
     }
     inner class ViewHolder(
         private val binding: CardDefautBinding
@@ -28,8 +38,11 @@ class AdapterEscopo(
         private lateinit var space: Space
         init {
             binding.root.setOnLongClickListener {
-                space.let { quandoclica.click(it) }
+                space.let { quandoPressiona.pressiona(it) }
                 true
+            }
+            binding.root.setOnClickListener{
+                space.let { quandoClica.clica(it) }
             }
         }
         fun vincula(space: Space){

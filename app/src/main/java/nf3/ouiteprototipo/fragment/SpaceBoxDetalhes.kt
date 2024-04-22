@@ -29,6 +29,7 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
 
         val name = arguments?.getString("name")?:""
         val space = db.spaceDao().getId(name)
+
         val titulo = binding.detalhesTextViewTitle
         titulo.text = space?.nomeId
         val caminho = binding.inputCaminho

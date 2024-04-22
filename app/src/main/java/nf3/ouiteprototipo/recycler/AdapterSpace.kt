@@ -15,12 +15,20 @@ class AdapterSpace(
         object :QuandoPressiona{
             override fun pressiona(space: Space){
             }
+        },
+    var quandoClica: QuandoClica =
+        object :QuandoClica{
+            override fun clica(space: Space){
+            }
         }
 ): RecyclerView.Adapter<AdapterSpace.ViewHolder>() {
 
     private val lista = lista.toMutableList()
     interface QuandoPressiona{
         fun pressiona(space: Space)
+    }
+    interface QuandoClica{
+        fun clica(space: Space)
     }
 
     inner class ViewHolder(
@@ -33,6 +41,9 @@ class AdapterSpace(
             binding.root.setOnLongClickListener {
                 space.let { quandoPressiona.pressiona(it) }
                 true
+            }
+            binding.root.setOnClickListener{
+                space.let { quandoClica.clica(it) }
             }
         }
 

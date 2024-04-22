@@ -8,6 +8,6 @@ data class Artifact(
     @PrimaryKey
     var nomeId: String,
     var descricao: String,
-    var caminh: String,
+    var caminho: String,
     var paiNameId: String
 )

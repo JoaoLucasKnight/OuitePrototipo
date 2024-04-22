@@ -22,7 +22,7 @@ class PesquisaEscopoFragment: Fragment(R.layout.pesquisa_escopo) {
         binding = PesquisaEscopoBinding.inflate(inflater,container,false)
 
         parentFragmentManager.commit {
-            add<Escopo>(binding.fragEscopo.id)
+            add<Escopo>(binding.fragEscopo.id, args = arguments)
         }
         return binding.root
     }

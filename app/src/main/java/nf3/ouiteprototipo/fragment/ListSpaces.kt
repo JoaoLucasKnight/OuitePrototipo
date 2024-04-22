@@ -12,9 +12,10 @@ import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SpacesBinding
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterSpace
+import nf3.ouiteprototipo.recycler.RecyclerViewListener
 import nf3.ouiteprototipo.room.AppDatabase
 
-class ListSpaces: Fragment(R.layout.spaces){
+class ListSpaces: Fragment(R.layout.spaces) {
 
     private val adaptado by lazy {
         context?.let {
@@ -46,6 +47,15 @@ class ListSpaces: Fragment(R.layout.spaces){
                         controller.navigate(R.id.cont_cardDetalhes_frament,args)
                     }
                 }
+            adaptado.quandoClica = object :AdapterSpace.QuandoClica{
+                override fun clica(space: Space) {
+                    val args = Bundle().apply {
+                        putString("id", space.nomeId)
+                        putString("caminho", space.caminho)
+                    }
+                    controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
+                }
+            }
             this.adapter = adaptado
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false )
         }
