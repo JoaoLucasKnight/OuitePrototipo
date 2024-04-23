@@ -4,6 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.CardDefautBinding
 import nf3.ouiteprototipo.model.Space
 
@@ -48,6 +49,7 @@ class AdapterSpace(
         }
 
         fun vincula(space: Space){
+            binding.iconCard.setImageResource(R.drawable.space)
             this.space = space
             val nome = binding.cardDefaultNome
             nome.text = space.nomeId

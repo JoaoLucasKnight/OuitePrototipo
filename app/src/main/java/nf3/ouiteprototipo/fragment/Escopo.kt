@@ -9,10 +9,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.EscopoBinding
-import nf3.ouiteprototipo.databinding.SpacesBinding
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterEscopo
-import nf3.ouiteprototipo.recycler.AdapterSpace
+
 import nf3.ouiteprototipo.room.AppDatabase
 
 class Escopo: Fragment(R.layout.escopo){
@@ -23,7 +22,10 @@ class Escopo: Fragment(R.layout.escopo){
         context?.let {
             val db = AppDatabase.instancia(it)
             val id: String = arguments?.getString("id")?: ""
-            AdapterEscopo(it, lista = db.spaceDao().getPai(id))
+            AdapterEscopo(it,
+                spaces = db.spaceDao().getPai(id),
+                boxes = db.boxDao().getPai(id),
+                artifacts = db.artifactDao().getPai(id))
         }?: throw IllegalArgumentException("Contexto Invalido ")
     }
     private lateinit var binding: EscopoBinding

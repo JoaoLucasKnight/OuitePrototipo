@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.AdicionarFormBinding
+import nf3.ouiteprototipo.model.Artifact
+import nf3.ouiteprototipo.model.Box
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.room.AppDatabase
 
@@ -29,15 +31,39 @@ class AddFormaFragment: Fragment(R.layout.adicionar_form) {
         val db = AppDatabase
             .instancia(context?:throw IllegalArgumentException("Contexto Invalido "))
         binding.addSalvarBtt.setOnClickListener {
-            db.spaceDao().salvar(Space(
-                nomeId = binding.inputNome.text.toString(),
-                descricao = binding.inputDescricao.text.toString(),
-                paiNameId = binding.inputPai.text.toString(),
-                caminho = buildCaminho(
-                    binding.inputPai.text.toString(),
-                    binding.inputNome.text.toString(),
-                    db)
-            ))
+            if(binding.spaceRadioBtt.isChecked){
+                db.spaceDao().salvar(
+                    Space(
+                        nomeId = binding.inputNome.text.toString(),
+                        descricao = binding.inputDescricao.text.toString(),
+                        paiNameId = binding.inputPai.text.toString(),
+                        caminho = buildCaminho(
+                            binding.inputPai.text.toString(),
+                            binding.inputNome.text.toString(),
+                            db)))
+            }else
+                if (binding.boxRadioBtt.isChecked){
+                db.boxDao().salvar(
+                    Box(
+                        nomeId = binding.inputNome.text.toString(),
+                        descricao = binding.inputDescricao.text.toString(),
+                        paiNameId = binding.inputPai.text.toString(),
+                        caminho = buildCaminho(
+                            binding.inputPai.text.toString(),
+                            binding.inputNome.text.toString(),
+                            db)))
+            }else
+                    if (binding.artifactRadioBtt.isChecked){
+                        db.artifactDao().salvar(
+                            Artifact(
+                                nomeId = binding.inputNome.text.toString(),
+                                descricao = binding.inputDescricao.text.toString(),
+                                paiNameId = binding.inputPai.text.toString(),
+                                caminho = buildCaminho(
+                                    binding.inputPai.text.toString(),
+                                    binding.inputNome.text.toString(),
+                                    db)))
+                    }
             findNavController().navigateUp()
         }
 
