@@ -36,8 +36,13 @@ interface BoxDAO {
     fun salvar(box: Box)
     @Delete
     fun delete(box: Box)
+    @Query("SELECT * FROM Box WHERE nomeId = :id")
+    fun getId(id: String): Box?
     @Query("SELECT * FROM Box WHERE paiNameId = :id")
     fun getPai(id: String): List<Box>
+
+    @Query("SELECT caminho FROM Box  WHERE nomeId = :id")
+    fun getCaminho(id: String): String?
 }
 
 @Dao
@@ -46,6 +51,9 @@ interface ArtifactDAO {
     fun salvar(artifact: Artifact)
     @Delete
     fun delete(artifact: Artifact)
+    @Query("SELECT * FROM Artifact WHERE nomeId = :id")
+    fun getId(id: String): Artifact?
     @Query("SELECT * FROM Artifact WHERE paiNameId = :id")
     fun getPai(id: String): List<Artifact>
+
 }

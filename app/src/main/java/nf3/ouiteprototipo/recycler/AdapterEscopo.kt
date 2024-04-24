@@ -16,41 +16,43 @@ class AdapterEscopo(
     boxes : List<Box>,
     artifacts: List<Artifact>,
 
-    var quandoPressiona: QuandoPressiona =
-        object :QuandoPressiona{
-            override fun pressiona(space: Space){
-            }
-        },
-
-    var quandoClica: QuandoClica =
-        object :QuandoClica{
-            override fun clica(space: Space){
-            }
+    var event: Events =
+        object :Events{
+//            override fun spacePressiona(space: Space){}
+            override fun spaceClica(space: Space){}
+//            override fun boxPressiona(box: Box){}
+            override fun boxClica(box: Box){}
+            override fun artifactClica(artifact: Artifact){}
         }
 ): RecyclerView.Adapter<AdapterEscopo.ViewHolder>() {
 
     private val spaces = spaces.toMutableList()
     private val boxes = boxes.toMutableList()
     private val artifacts = artifacts.toMutableList()
-    interface QuandoClica{
-        fun clica(space: Space)
+
+    interface Events{
+//        fun spacePressiona(space: Space)
+        fun spaceClica(space: Space)
+//        fun boxPressiona(box: Box)
+        fun boxClica(box: Box)
+        fun artifactClica(artifact: Artifact)
     }
 
-    interface QuandoPressiona{
-        fun pressiona(space: Space)
-    }
     inner class ViewHolder(
         private val binding: CardDefautBinding
     ): RecyclerView.ViewHolder(binding.root){
 
         private lateinit var space: Space
+        private lateinit var box: Box
+        private lateinit var artifact: Artifact
+
         init {
-            binding.root.setOnLongClickListener {
-                space.let { quandoPressiona.pressiona(it) }
-                true
-            }
             binding.root.setOnClickListener{
-                space.let { quandoClica.clica(it) }
+                when (adapterPosition){
+                    in 0 until spaces.size -> space.let { event.spaceClica(it)}
+                    in spaces.size until (spaces.size + boxes.size) -> box.let { event.boxClica(it) }
+                    else -> artifact.let { event.artifactClica(it) }
+                }
             }
         }
         fun vincula(space: Space){
@@ -63,6 +65,7 @@ class AdapterEscopo(
         }
         fun vincula(box: Box){
             binding.iconCard.setImageResource(R.drawable.box)
+            this.box = box
             val nome = binding.cardDefaultNome
             nome.text = box.nomeId
             val caminho = binding.cardDefaultCaminho
@@ -70,13 +73,13 @@ class AdapterEscopo(
         }
         fun vincula(artifact: Artifact){
             binding.iconCard.setImageResource(R.drawable.artifact)
+            this.artifact = artifact
             val nome = binding.cardDefaultNome
             nome.text = artifact.nomeId
             val caminho = binding.cardDefaultCaminho
             caminho.text = artifact.caminho
         }
     }
-
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         val inflater = LayoutInflater.from(context)
         val binding = CardDefautBinding.inflate(inflater, parent, false)

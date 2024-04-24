@@ -17,7 +17,7 @@
         <item name="colorSurfaceBright">@color/branco</item>
         <item name="colorOnSurface">@color/mnbNavy</item>
 <!--Primary-->
-        <item name="colorPrimary">@color/paleGreen</item>
+        <item name="colorPrimary">@color/mnbNavy</item>
         <item name="colorOnPrimary">@color/branco</item>
         <item name="colorPrimaryContainer">@color/turquoise</item>
         <item name="colorOnPrimaryContainer">@color/mnbNavy</item>

@@ -39,15 +39,14 @@ class ListSpaces: Fragment(R.layout.spaces) {
         val controller = view.findNavController()
 
         binding.listaSpace.run {
-            adaptado.quandoPressiona = object : AdapterSpace.QuandoPressiona{
-                    override fun pressiona(space: Space) {
-                        val args = Bundle().apply {
-                            putString("name", space.nomeId)
-                        }
-                        controller.navigate(R.id.cont_cardDetalhes_frament,args)
+
+            adaptado.eventSpace = object : AdapterSpace.EventSpace{
+                override fun pressiona(space: Space) {
+                    val args = Bundle().apply {
+                        putString("name", space.nomeId)
                     }
+                    controller.navigate(R.id.cont_cardDetalhes_frament,args)
                 }
-            adaptado.quandoClica = object :AdapterSpace.QuandoClica{
                 override fun clica(space: Space) {
                     val args = Bundle().apply {
                         putString("id", space.nomeId)
@@ -56,6 +55,7 @@ class ListSpaces: Fragment(R.layout.spaces) {
                     controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
                 }
             }
+
             this.adapter = adaptado
             layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false )
         }

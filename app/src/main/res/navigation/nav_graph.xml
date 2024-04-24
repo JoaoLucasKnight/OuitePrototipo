@@ -41,5 +41,11 @@
         android:label="Pesquisa_escopo"
         tools:layout="@layout/pesquisa_escopo"/>
 
+    <fragment
+        android:id="@+id/cont_ArtifactDetalhes_fragment"
+        android:name="nf3.ouiteprototipo.fragment.ArtifacDetalhesFragment"
+        android:label="Detalhes_Artifact"
+        tools:layout="@layout/card_artifact"/>
+
 
 </navigation>

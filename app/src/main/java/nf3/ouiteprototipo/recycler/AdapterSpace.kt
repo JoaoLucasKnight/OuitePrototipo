@@ -11,24 +11,19 @@ import nf3.ouiteprototipo.model.Space
 class AdapterSpace(
     private val context: Context,
     lista: List<Space>,
-
-    var quandoPressiona: QuandoPressiona =
-        object :QuandoPressiona{
+    var eventSpace: EventSpace =
+        object :EventSpace{
             override fun pressiona(space: Space){
             }
-        },
-    var quandoClica: QuandoClica =
-        object :QuandoClica{
             override fun clica(space: Space){
             }
         }
 ): RecyclerView.Adapter<AdapterSpace.ViewHolder>() {
 
     private val lista = lista.toMutableList()
-    interface QuandoPressiona{
+
+    interface EventSpace{
         fun pressiona(space: Space)
-    }
-    interface QuandoClica{
         fun clica(space: Space)
     }
 
@@ -40,11 +35,11 @@ class AdapterSpace(
         private lateinit var space: Space
         init {
             binding.root.setOnLongClickListener {
-                space.let { quandoPressiona.pressiona(it) }
+                space.let { eventSpace.pressiona(it) }
                 true
             }
             binding.root.setOnClickListener{
-                space.let { quandoClica.clica(it) }
+                space.let { eventSpace.clica(it) }
             }
         }
 

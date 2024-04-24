@@ -9,14 +9,14 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.EscopoBinding
+import nf3.ouiteprototipo.model.Artifact
+import nf3.ouiteprototipo.model.Box
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterEscopo
 
 import nf3.ouiteprototipo.room.AppDatabase
 
 class Escopo: Fragment(R.layout.escopo){
-
-
 
     private val adaptado by lazy {
         context?.let {
@@ -49,21 +49,25 @@ class Escopo: Fragment(R.layout.escopo){
 
         binding.recyclerViewEscopo.run {
             this.adapter = adaptado
-            adaptado.quandoPressiona = object : AdapterEscopo.QuandoPressiona{
-                override fun pressiona(space: Space) {
-                    val args = Bundle().apply {
-                        putString("name", space.nomeId)
-                    }
-                    controller.navigate(R.id.cont_cardDetalhes_frament,args)
-                }
-            }
-            adaptado.quandoClica = object :AdapterEscopo.QuandoClica {
-                override fun clica(space: Space) {
+
+            adaptado.event = object :AdapterEscopo.Events{
+                override fun spaceClica(space: Space) {
                     val args = Bundle().apply {
                         putString("id", space.nomeId)
                         putString("caminho", space.caminho)
                     }
                     controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
+                }
+                override fun boxClica(box: Box) {
+                    val args = Bundle().apply {
+                        putString("id", box.nomeId)
+                        putString("caminho", box.caminho)
+                    }
+                    controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
+                }
+
+                override fun artifactClica(artifact: Artifact) {
+                    controller.navigate(R.id.cont_ArtifactDetalhes_fragment)
                 }
             }
             layoutManager = GridLayoutManager(context, 2)
