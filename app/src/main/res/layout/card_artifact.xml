@@ -8,23 +8,26 @@
 
     <TextView
         android:id="@+id/artifact_textView_way"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_light"
         android:text="Caminho>Caminh>Caminho"
-        app:layout_constraintStart_toStartOf="parent"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textColor="?attr/colorPrimary"
+        app:layout_constraintStart_toStartOf="@+id/materialCardView"
         app:layout_constraintTop_toTopOf="parent" />
 
     <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginVertical="32dp"
+        android:layout_height="wrap_content"
         android:layout_marginHorizontal="32dp"
+        android:layout_marginVertical="32dp"
         android:elevation="3dp"
-        app:layout_constraintTop_toBottomOf="@+id/artifact_textView_way"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-       >
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/artifact_textView_way">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
@@ -34,13 +37,14 @@
                 android:id="@+id/detalhes_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
-                android:text="Cabo P2-P2"
-                android:textAppearance="?attr/textAppearanceTitleMedium"
-                android:textSize="24dp"
+                android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_medium"
+                android:textAppearance="?attr/textAppearanceTitleLarge"
+                android:textColor="?attr/colorSecondary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Cabo P2-P2" />
 
             <TextView
                 android:id="@+id/detalhes_textView_nota"
@@ -48,6 +52,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
                 android:text="Nota:"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -59,7 +64,7 @@
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-
+                app:cardBackgroundColor="?attr/colorOnPrimary"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/detalhes_textView_nota">
@@ -69,15 +74,16 @@
                     android:layout_height="match_parent">
 
                     <TextView
+                        android:id="@+id/textView_artifact_detalhes"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="16dp"
                         android:layout_marginVertical="16dp"
-                        android:text="Descrição e anotações "
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="Descrição e anotações " />
 
 
                 </androidx.constraintlayout.widget.ConstraintLayout>
@@ -90,6 +96,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins"
                 android:text="Historico"
                 android:textSize="16dp"
 
@@ -111,7 +118,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
+                android:backgroundTint="?attr/colorSecondary"
+                android:fontFamily="@font/poppins"
                 android:text="Pegar"
+                android:textColor="?attr/colorOnSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/status" />

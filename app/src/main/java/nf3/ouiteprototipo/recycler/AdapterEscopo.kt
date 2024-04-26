@@ -18,10 +18,11 @@ class AdapterEscopo(
 
     var event: Events =
         object :Events{
-//            override fun spacePressiona(space: Space){}
+            override fun spacePressiona(space: Space){}
             override fun spaceClica(space: Space){}
-//            override fun boxPressiona(box: Box){}
+            override fun boxPressiona(box: Box){}
             override fun boxClica(box: Box){}
+            override fun artifactPressiona(artifact: Artifact){}
             override fun artifactClica(artifact: Artifact){}
         }
 ): RecyclerView.Adapter<AdapterEscopo.ViewHolder>() {
@@ -31,10 +32,12 @@ class AdapterEscopo(
     private val artifacts = artifacts.toMutableList()
 
     interface Events{
-//        fun spacePressiona(space: Space)
+        fun spacePressiona(space: Space)
         fun spaceClica(space: Space)
-//        fun boxPressiona(box: Box)
+        fun boxPressiona(box: Box)
         fun boxClica(box: Box)
+
+        fun artifactPressiona(artifact: Artifact)
         fun artifactClica(artifact: Artifact)
     }
 
@@ -47,16 +50,24 @@ class AdapterEscopo(
         private lateinit var artifact: Artifact
 
         init {
-            binding.root.setOnClickListener{
+            binding.root.setOnClickListener(){
                 when (adapterPosition){
-                    in 0 until spaces.size -> space.let { event.spaceClica(it)}
-                    in spaces.size until (spaces.size + boxes.size) -> box.let { event.boxClica(it) }
+                    in 0 until spaces.size -> space.let { event.spaceClica(it) }
+                    in spaces.size until (spaces.size + boxes.size) -> box.let { event.boxClica(it)}
                     else -> artifact.let { event.artifactClica(it) }
                 }
             }
+            binding.root.setOnLongClickListener {
+                when (adapterPosition){
+                    in 0 until spaces.size -> space.let { event.spacePressiona(it) }
+                    in spaces.size until (spaces.size + boxes.size) -> box.let { event.boxPressiona(it)}
+                    else -> artifact.let { event.artifactPressiona(it) }
+                }
+                true
+            }
         }
         fun vincula(space: Space){
-            binding.iconCard.setImageResource(R.drawable.space)
+            binding.iconCard.setImageResource(R.drawable.icon_space)
             this.space = space
             val nome = binding.cardDefaultNome
             nome.text = space.nomeId
@@ -64,7 +75,7 @@ class AdapterEscopo(
             caminho.text = space.caminho
         }
         fun vincula(box: Box){
-            binding.iconCard.setImageResource(R.drawable.box)
+            binding.iconCard.setImageResource(R.drawable.icon_box)
             this.box = box
             val nome = binding.cardDefaultNome
             nome.text = box.nomeId
@@ -72,7 +83,7 @@ class AdapterEscopo(
             caminho.text = box.caminho
         }
         fun vincula(artifact: Artifact){
-            binding.iconCard.setImageResource(R.drawable.artifact)
+            binding.iconCard.setImageResource(R.drawable.icon_artifact)
             this.artifact = artifact
             val nome = binding.cardDefaultNome
             nome.text = artifact.nomeId

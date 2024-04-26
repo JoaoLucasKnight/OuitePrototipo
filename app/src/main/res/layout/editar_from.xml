@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+
+    <TextView
+        android:id="@+id/textView_tipo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/poppins_light"
+        tools:text="Editar"
+        android:textAppearance="?attr/textAppearanceTitleLarge"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/textView_pai"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorSecondaryContainer"
+        android:layout_marginTop="32dp"
+        android:text="Lugar ou caixa, que ele está"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        app:layout_constraintStart_toStartOf="@+id/textView_nome"
+        app:layout_constraintTop_toBottomOf="@+id/layout_pai" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_pai"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/textView_nome"
+        app:layout_constraintTop_toBottomOf="@+id/textView_nome">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_pai"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_nome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorSecondaryContainer"
+        android:text="Nome"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView_tipo" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layout_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/layout_pai"
+        app:layout_constraintStart_toStartOf="@+id/layout_pai"
+        app:layout_constraintTop_toBottomOf="@+id/textView_pai">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_nome"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/textView_descricao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:textColor="?attr/colorSecondaryContainer"
+        android:layout_marginTop="32dp"
+        android:text="Notas ou foto"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
+        app:layout_constraintStart_toStartOf="@+id/textView_nome"
+        app:layout_constraintTop_toBottomOf="@+id/layout_nome" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/layou_descricao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="@+id/layout_pai"
+        app:layout_constraintStart_toStartOf="@+id/layout_pai"
+        app:layout_constraintTop_toBottomOf="@+id/textView_descricao">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_descricao"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/poppins" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/add_editar_btt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Editar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/layou_descricao" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

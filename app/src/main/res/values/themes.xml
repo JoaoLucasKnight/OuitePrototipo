@@ -5,32 +5,35 @@
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
 <!--Background-->
         <item name="android:colorBackground">@color/branco</item>
-        <item name="colorOnBackground">@color/branco</item>
-        <item name="scrimBackground">@color/black</item>
-<!--Outline-->
-        <item name="colorOutline">@color/paleGreen</item>
-        <item name="colorOutlineVariant">@color/lemon</item>
+<!--Outline -->
+        <item name="colorOutline">@color/azul_m</item>
+        <item name="colorOutlineVariant">@color/azul_b</item>
 
 <!--Surfaces-->
-        <item name="colorSurfaceDim">@color/lemon_ww</item>
-        <item name="colorSurface">@color/lemon_w</item>
+        <item name="colorSurfaceVariant">@color/azul_m</item>
+        <item name="colorSurfaceDim">@color/azul_m</item>
+        <item name="colorSurface">@color/marron</item>
+        <item name="colorOnSurface">@color/azul_b</item>
+
         <item name="colorSurfaceBright">@color/branco</item>
-        <item name="colorOnSurface">@color/mnbNavy</item>
+
 <!--Primary-->
-        <item name="colorPrimary">@color/mnbNavy</item>
+        <item name="colorPrimary">@color/marron</item>
         <item name="colorOnPrimary">@color/branco</item>
-        <item name="colorPrimaryContainer">@color/turquoise</item>
-        <item name="colorOnPrimaryContainer">@color/mnbNavy</item>
+        <item name="colorPrimaryContainer">@color/marron_m</item>
+        <item name="colorOnPrimaryContainer">@color/marron_b</item>
+
 <!--Secondary-->
-        <item name="colorSecondary">@color/teal</item>
-        <item name="colorOnSecondary">@color/lemon</item>
-        <item name="colorSecondaryContainer">@color/mnbNavy</item>
-        <item name="colorOnSecondaryContainer">@color/lemon</item>
+        <item name="colorSecondary">@color/azul</item>
+        <item name="colorOnSecondary">@color/preto</item>
+        <item name="colorSecondaryContainer">@color/azul_m</item>
+        <item name="colorOnSecondaryContainer">@color/azul_b</item>
+
 <!--Erro-->
-        <item name="colorError">@color/orange</item>
-        <item name="colorOnError">@color/orange</item>
-        <item name="colorErrorContainer">@color/orangew</item>
-        <item name="colorOnErrorContainer">@color/orangeb</item>
+        <item name="colorError">@color/red_m</item>
+        <item name="colorOnError">@color/branco</item>
+        <item name="colorErrorContainer">@color/red</item>
+        <item name="colorOnErrorContainer">@color/red_b</item>
     </style>
 
     <style name="Theme.OuitePrototipo" parent="Base.Theme.OuitePrototipo" />

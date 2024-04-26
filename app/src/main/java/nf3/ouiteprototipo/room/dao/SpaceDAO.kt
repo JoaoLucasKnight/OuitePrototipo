@@ -5,6 +5,7 @@ import androidx.room.Delete
 
 import androidx.room.Insert
 import androidx.room.Query
+import androidx.room.Update
 import nf3.ouiteprototipo.model.Artifact
 import nf3.ouiteprototipo.model.Box
 import nf3.ouiteprototipo.model.Space
@@ -28,6 +29,8 @@ interface SpaceDAO {
     fun salvar(space:Space)
     @Delete
     fun delete(space: Space)
+    @Update
+    fun up(space: Space)
 }
 
 @Dao
@@ -36,6 +39,8 @@ interface BoxDAO {
     fun salvar(box: Box)
     @Delete
     fun delete(box: Box)
+    @Update
+    fun up(box: Box)
     @Query("SELECT * FROM Box WHERE nomeId = :id")
     fun getId(id: String): Box?
     @Query("SELECT * FROM Box WHERE paiNameId = :id")
@@ -51,6 +56,9 @@ interface ArtifactDAO {
     fun salvar(artifact: Artifact)
     @Delete
     fun delete(artifact: Artifact)
+    @Update
+    fun up(artifact: Artifact)
+
     @Query("SELECT * FROM Artifact WHERE nomeId = :id")
     fun getId(id: String): Artifact?
     @Query("SELECT * FROM Artifact WHERE paiNameId = :id")

@@ -14,12 +14,15 @@
         android:fontFamily="@font/poppins_light"
         android:layout_marginStart="32dp"
         tools:text="Bem vindo ao Ouite"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintBottom_toBottomOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/homeImgPerfil" />
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/homeImgPerfil"
+        android:background="@drawable/arredondar"
+        android:src="@drawable/perfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="32dp"
@@ -33,6 +36,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
+        android:textColorHint="?attr/colorSecondaryContainer"
         app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
         app:layout_constraintTop_toBottomOf="@+id/homeImgPerfil">

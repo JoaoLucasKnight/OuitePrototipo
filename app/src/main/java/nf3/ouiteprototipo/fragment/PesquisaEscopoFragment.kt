@@ -23,6 +23,7 @@ class PesquisaEscopoFragment: Fragment(R.layout.pesquisa_escopo) {
 
         parentFragmentManager.commit {
             add<Escopo>(binding.fragEscopo.id, args = arguments)
+            add<AddBtt>(binding.fragAdd.id)
         }
         return binding.root
     }

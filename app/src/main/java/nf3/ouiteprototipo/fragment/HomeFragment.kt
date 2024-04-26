@@ -41,9 +41,5 @@ class HomeFragment: Fragment(R.layout.home) {
                 findNavController().navigate(R.id.cont_cadastro_fragment)
             }
         }
-
-
-
-
     }
 }

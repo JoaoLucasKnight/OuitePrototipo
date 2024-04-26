@@ -12,7 +12,6 @@ import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SpacesBinding
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterSpace
-import nf3.ouiteprototipo.recycler.RecyclerViewListener
 import nf3.ouiteprototipo.room.AppDatabase
 
 class ListSpaces: Fragment(R.layout.spaces) {
@@ -44,6 +43,7 @@ class ListSpaces: Fragment(R.layout.spaces) {
                 override fun pressiona(space: Space) {
                     val args = Bundle().apply {
                         putString("name", space.nomeId)
+                        putString("tipo", "Space")
                     }
                     controller.navigate(R.id.cont_cardDetalhes_frament,args)
                 }

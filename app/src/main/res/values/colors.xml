@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="branco">#FFFFFF</color>
-    <color name="lemon_ww">#f9fff3</color>
-    <color name="lemon_w">#f3ffe8</color>
-    <color name="lemon">#DAFDBA</color>
-    <color name="paleGreen">#9AEBA3</color>
-    <color name="turquoise">#45C4B0</color>
-    <color name="teal">#13678A</color>
-    <color name="mnbNavy">#012030</color>
-    <color name="black">#000000</color>
+    <color name="branco">#FFFCFA</color>
+    <color name="preto">#292929</color>
 
-    <color name="orangew">#FF8247</color>
-    <color name="orange">#B35B32</color>
-    <color name="orangeb">#61311B</color>
+    <color name="marron">#C48A5A</color>
+    <color name="marron_m">#8A6140</color>
+    <color name="marron_b">#4F3825</color>
+
+    <color name="azul_w">#E6F4FF</color>
+    <color name="azul">#D2E2EF</color>
+    <color name="azul_m">#869098</color>
+    <color name="azul_b">#3A3E42</color>
+
+
+    <color name="red">#FFB7AA</color>
+    <color name="red_m">#941600</color>
+    <color name="red_b">#3F1B15</color>
+
 </resources>

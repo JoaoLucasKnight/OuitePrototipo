@@ -58,6 +58,13 @@ class Escopo: Fragment(R.layout.escopo){
                     }
                     controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
                 }
+                override fun spacePressiona(space: Space) {
+                    val args = Bundle().apply {
+                        putString("name", space.nomeId)
+                        putString("tipo", "Space")
+                    }
+                    controller.navigate(R.id.cont_cardDetalhes_frament,args)
+                }
                 override fun boxClica(box: Box) {
                     val args = Bundle().apply {
                         putString("id", box.nomeId)
@@ -65,9 +72,26 @@ class Escopo: Fragment(R.layout.escopo){
                     }
                     controller.navigate(R.id.cont_pesquisaEscopo_fragment, args)
                 }
-
+                override fun boxPressiona(box: Box) {
+                    val args = Bundle().apply {
+                        putString("name", box.nomeId)
+                        putString("tipo", "Box")
+                    }
+                    controller.navigate(R.id.cont_cardDetalhes_frament,args)
+                }
                 override fun artifactClica(artifact: Artifact) {
-                    controller.navigate(R.id.cont_ArtifactDetalhes_fragment)
+                    val args = Bundle().apply{
+                        putString("id", artifact.nomeId)
+                    }
+                    controller.navigate(R.id.cont_ArtifactDetalhes_fragment, args)
+                }
+
+                override fun artifactPressiona(artifact: Artifact) {
+                        val args = Bundle().apply {
+                            putString("name", artifact.nomeId )
+                            putString("tipo", "Artifact")
+                        }
+                        findNavController().navigate(R.id.cont_editar_fragment,args)
                 }
             }
             layoutManager = GridLayoutManager(context, 2)

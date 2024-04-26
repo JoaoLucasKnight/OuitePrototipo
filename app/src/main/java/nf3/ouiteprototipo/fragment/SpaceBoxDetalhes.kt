@@ -28,19 +28,58 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
             .instancia(context?: throw IllegalArgumentException("Contexto invalido"))
 
         val name = arguments?.getString("name")?:""
-        val space = db.spaceDao().getId(name)
+        val tipo = arguments?.getString("tipo")?:""
 
-        val titulo = binding.detalhesTextViewTitle
-        titulo.text = space?.nomeId
-        val caminho = binding.inputCaminho
-        caminho.text = space?.caminho
-        val notas = binding.detalhesTextViewAnotacao
-        notas.text = space?.descricao
+        when(tipo){
+            "Space" -> {
+                val space = db.spaceDao().getId(name)
+                if(space != null) {
+                    val titulo = binding.detalhesTextViewTitle
+                    titulo.text = space.nomeId
+                    val caminho = binding.inputCaminho
+                    caminho.text = space.caminho
+                    val notas = binding.detalhesTextViewAnotacao
+                    notas.text = space.descricao
 
+                    binding.editarBtt.setOnClickListener{
+                        val args = Bundle().apply {
+                            putString("name", space.nomeId )
+                            putString("tipo", "Space")
+                        }
+                        findNavController().navigate(R.id.cont_editar_fragment,args)
+                    }
 
-        binding.removerBtt.setOnClickListener {
-            db.spaceDao().delete(space?:throw IllegalArgumentException("Space nulo"))
-            findNavController().navigateUp()
+                    binding.removerBtt.setOnClickListener {
+                        db.spaceDao().delete(space)
+                    }
+
+                }
+            }
+            "Box" -> {
+               val box = db.boxDao().getId(name)
+               if (box != null){
+                   val titulo = binding.detalhesTextViewTitle
+                   titulo.text = box.nomeId
+                   val caminho = binding.inputCaminho
+                   caminho.text = box.caminho
+                   val notas = binding.detalhesTextViewAnotacao
+                   notas.text = box.descricao
+
+                   binding.editarBtt.setOnClickListener{
+                       val args = Bundle().apply {
+                           putString("name", box.nomeId )
+                           putString("tipo", "Box")
+                       }
+                       findNavController().navigate(R.id.cont_editar_fragment,args)
+                   }
+
+                   binding.removerBtt.setOnClickListener {
+                       db.boxDao().delete(box)
+                       findNavController().navigateUp()
+                   }
+               }
+            }
         }
     }
 }
+

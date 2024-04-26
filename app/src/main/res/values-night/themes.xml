@@ -3,5 +3,36 @@
     <style name="Base.Theme.OuitePrototipo" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <!--Background-->
+        <item name="android:colorBackground">@color/preto</item>
+        <!--Outline -->
+        <item name="colorOutline">@color/marron_m</item>
+        <item name="colorOutlineVariant">@color/marron_b</item>
+
+        <!--Surfaces-->
+        <item name="colorSurfaceVariant">@color/marron_m</item>
+        <item name="colorSurfaceDim">@color/marron</item>
+        <item name="colorSurface">@color/azul</item>
+        <item name="colorOnSurface">@color/marron_b</item>
+
+        <item name="colorSurfaceBright">@color/preto</item>
+
+        <!--Primary-->
+        <item name="colorPrimary">@color/azul</item>
+        <item name="colorOnPrimary">@color/preto</item>
+        <item name="colorPrimaryContainer">@color/azul_m</item>
+        <item name="colorOnPrimaryContainer">@color/azul_b</item>
+
+        <!--Secondary-->
+        <item name="colorSecondary">@color/marron_b</item>
+        <item name="colorOnSecondary">@color/branco</item>
+        <item name="colorSecondaryContainer">@color/marron_m</item>
+        <item name="colorOnSecondaryContainer">@color/marron</item>
+
+        <!--Erro-->
+        <item name="colorError">@color/red_m</item>
+        <item name="colorOnError">@color/branco</item>
+        <item name="colorErrorContainer">@color/red</item>
+        <item name="colorOnErrorContainer">@color/red_b</item>
     </style>
 </resources>

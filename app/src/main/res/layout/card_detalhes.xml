@@ -28,9 +28,11 @@
                 android:id="@+id/detalhes_textView_title"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="16dp"
                 tools:text="Cabo P2-P2"
                 android:textAppearance="?attr/textAppearanceTitleMedium"
+                android:fontFamily="@font/poppins_medium"
+                android:textColor="?attr/colorSecondary"
                 android:textSize="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -40,8 +42,10 @@
                 android:id="@+id/detalhes_textView_nota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:text="Nota:"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
@@ -50,6 +54,7 @@
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/detalhes_cardCont_notas"
                 android:layout_width="match_parent"
+                android:backgroundTint="?attr/colorOnPrimary"
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
@@ -84,8 +89,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins"
                 android:text="Caminho:"
-                android:textSize="16dp"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
                 app:layout_constraintTop_toBottomOf="@id/detalhes_cardCont_notas" />
 
@@ -95,19 +101,24 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:fontFamily="@font/poppins_light"
+                android:textAppearance="?attr/textAppearanceBodyMedium"
                 app:layout_constraintEnd_toEndOf="@+id/detalhes_cardCont_notas"
                 app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
                 app:layout_constraintTop_toBottomOf="@id/detalhes_textView_caminho"
                 tools:text="Caminho..." />
 
-
             <Button
                 android:id="@+id/editar_btt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="32dp"
                 android:layout_marginStart="48dp"
+                android:layout_marginTop="32dp"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="?attr/colorSecondary"
+                android:textColor="?attr/colorOnSecondary"
                 android:text="Editar"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/input_caminho" />
 
@@ -118,6 +129,10 @@
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="48dp"
                 android:text="Remover"
+                android:fontFamily="@font/poppins"
+                android:backgroundTint="?attr/colorSecondary"
+                android:textColor="?attr/colorOnSecondary"
+                app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent
 "
                 app:layout_constraintTop_toBottomOf="@id/input_caminho" />

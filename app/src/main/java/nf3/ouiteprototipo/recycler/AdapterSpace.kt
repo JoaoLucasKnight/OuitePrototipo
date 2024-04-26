@@ -44,7 +44,7 @@ class AdapterSpace(
         }
 
         fun vincula(space: Space){
-            binding.iconCard.setImageResource(R.drawable.space)
+            binding.iconCard.setImageResource(R.drawable.icon_space)
             this.space = space
             val nome = binding.cardDefaultNome
             nome.text = space.nomeId

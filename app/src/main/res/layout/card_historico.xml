@@ -9,6 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
+        app:strokeWidth="2dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -39,6 +40,8 @@
                     android:id="@+id/card_historico_title"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:fontFamily="@font/poppins_medium"
+                    android:textColor="?attr/colorSecondary"
                     android:text="Cabo P2-P2"
                     android:textAppearance="?attr/textAppearanceTitleMedium" />
 
@@ -48,6 +51,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:text="Quarto > Escrivaninha > Gaveta 2 >"
+                    android:fontFamily="@font/poppins"
                     android:textAppearance="?attr/textAppearanceBodyMedium"
                     android:textColor="?android:attr/textColorSecondary" />
             </LinearLayout>
@@ -57,6 +61,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Data // Hora : "
+                android:fontFamily="@font/poppins_light"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
                 android:textColor="?android:attr/textColorSecondary" />
         </LinearLayout>
