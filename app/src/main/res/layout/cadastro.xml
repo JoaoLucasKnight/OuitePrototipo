@@ -48,6 +48,7 @@
         android:fontFamily="@font/poppins_light"
         android:layout_marginTop="48dp"
         android:text="Email"
+        android:textColor="?attr/colorOnSurface"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
         app:layout_constraintTop_toBottomOf="@+id/cadastroInputImg" />
@@ -79,6 +80,7 @@
         android:layout_marginTop="16dp"
         android:fontFamily="@font/poppins_light"
         android:text="Senha"
+        android:textColor="?attr/colorOnSurface"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
         app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputEmail" />
@@ -105,6 +107,7 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins_light"
         android:text="Nome de Usuario"
+        android:textColor="?attr/colorOnSurface"
         android:layout_marginTop="16dp"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
@@ -133,6 +136,7 @@
         android:fontFamily="@font/poppins_light"
         android:layout_marginTop="16dp"
         android:text="Numero de telefone"
+        android:textColor="?attr/colorOnSurface"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintStart_toStartOf="@+id/cadastroInputImg"
         app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputNome" />
@@ -159,9 +163,10 @@
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
         android:text="Salvar"
+        android:backgroundTint="?attr/colorPrimary"
+        android:textColor="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/cadastroLogoImg"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/cadastroLogoImg"
         app:layout_constraintTop_toBottomOf="@+id/cadastroLayoutInputNumero" />
 

@@ -64,4 +64,7 @@ interface ArtifactDAO {
     @Query("SELECT * FROM Artifact WHERE paiNameId = :id")
     fun getPai(id: String): List<Artifact>
 
+    @Query("SELECT * FROM Artifact")
+    fun getAll(): List<Artifact>
+
 }

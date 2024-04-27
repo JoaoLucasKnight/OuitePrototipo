@@ -31,33 +31,26 @@
         app:layout_constraintTop_toTopOf="parent"
         />
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layoutPesquisa"
-        android:layout_width="0dp"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/frag_pesquisa"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:textColorHint="?attr/colorSecondaryContainer"
+        android:layout_marginHorizontal="32dp"
         app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
-        app:layout_constraintTop_toBottomOf="@+id/homeImgPerfil">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/inputPesquisa"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:fontFamily="@font/poppins"
-            android:hint="Pesquisar" />
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintTop_toBottomOf="@+id/homeImgPerfil"
+         />
 
 
     <androidx.fragment.app.FragmentContainerView
         android:id="@+id/fragSpace"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="@+id/welcome"
-        app:layout_constraintTop_toBottomOf="@+id/layoutPesquisa"
+        app:layout_constraintTop_toBottomOf="@+id/frag_pesquisa"
         tools:layout="@layout/spaces" />
 
     <!--        tools:layout="@layout/historico" />-->

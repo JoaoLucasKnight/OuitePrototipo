@@ -43,7 +43,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
-                    android:textColor="?attr/colorSecondary"
+                    android:textColor="@color/azul"
                     android:maxLength="12"
                     tools:text="Quarto"
                     android:textAppearance="?attr/textAppearanceBodySmall" />
@@ -53,7 +53,7 @@
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
-                    android:fontFamily="@font/poppins_light"
+                    android:fontFamily="@font/poppins"
                     android:textColor="?attr/colorOutlineVariant"
                     android:maxLines="1"
                     android:maxLength="12"

@@ -6,14 +6,14 @@
         <!--Background-->
         <item name="android:colorBackground">@color/preto</item>
         <!--Outline -->
-        <item name="colorOutline">@color/marron_m</item>
-        <item name="colorOutlineVariant">@color/marron_b</item>
+        <item name="colorOutline">@color/marron</item>
+        <item name="colorOutlineVariant">@color/marron_m</item>
 
         <!--Surfaces-->
         <item name="colorSurfaceVariant">@color/marron_m</item>
-        <item name="colorSurfaceDim">@color/marron</item>
-        <item name="colorSurface">@color/azul</item>
-        <item name="colorOnSurface">@color/marron_b</item>
+        <item name="colorSurfaceDim">@color/marron_b</item>
+        <item name="colorSurface">@color/azul_b</item>
+        <item name="colorOnSurface">@color/marron</item>
 
         <item name="colorSurfaceBright">@color/preto</item>
 
@@ -24,10 +24,10 @@
         <item name="colorOnPrimaryContainer">@color/azul_b</item>
 
         <!--Secondary-->
-        <item name="colorSecondary">@color/marron_b</item>
+        <item name="colorSecondary">@color/marron</item>
         <item name="colorOnSecondary">@color/branco</item>
         <item name="colorSecondaryContainer">@color/marron_m</item>
-        <item name="colorOnSecondaryContainer">@color/marron</item>
+        <item name="colorOnSecondaryContainer">@color/marron_b</item>
 
         <!--Erro-->
         <item name="colorError">@color/red_m</item>
