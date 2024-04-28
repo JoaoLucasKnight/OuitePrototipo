@@ -7,14 +7,16 @@
 
     <com.google.android.material.card.MaterialCardView
         android:id="@+id/card"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_margin="16dp"
         android:elevation="2dp"
-        app:strokeWidth="2dp"
-
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="2dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -43,10 +45,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
+                    android:maxLines="1"
+                    android:maxLength="24"
+                    android:textAppearance="?attr/textAppearanceBodySmall"
                     android:textColor="@color/azul"
-                    android:maxLength="12"
-                    tools:text="Quarto"
-                    android:textAppearance="?attr/textAppearanceBodySmall" />
+                    tools:text="Quarto" />
 
                 <TextView
                     android:id="@+id/card_default_caminho"
@@ -54,12 +57,11 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
                     android:fontFamily="@font/poppins"
-                    android:textColor="?attr/colorOutlineVariant"
+                    android:maxLength="24"
                     android:maxLines="1"
-                    android:maxLength="12"
-                    tools:text="1 - Lugar / 3 Box"
                     android:textAppearance="?attr/textAppearanceBodySmall"
-                     />
+                    android:textColor="?attr/colorOutlineVariant"
+                    tools:text="1 - Lugar / 3 Box" />
             </LinearLayout>
 
             <!-- Buttons -->

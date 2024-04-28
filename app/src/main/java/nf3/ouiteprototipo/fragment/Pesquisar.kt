@@ -7,17 +7,28 @@ import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
 
 import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SearchBinding
 import nf3.ouiteprototipo.model.Artifact
+import nf3.ouiteprototipo.recycler.AdapterArtifact
+import nf3.ouiteprototipo.recycler.AdapterSpace
 import nf3.ouiteprototipo.room.AppDatabase
+import java.util.Locale
 
 class Pesquisar: Fragment(R.layout.search) {
 
 
     private lateinit var binding: SearchBinding
     private lateinit var lista: List<Artifact>
+    private lateinit var db: AppDatabase
+    private lateinit var adaptado: AdapterArtifact
+
+
+    private val Cont by lazy {
+        context?.let {it}?: throw IllegalArgumentException("Contexto Invalido ")
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -26,40 +37,55 @@ class Pesquisar: Fragment(R.layout.search) {
     ): View? {
         binding = SearchBinding.inflate(inflater, container, false)
 
-        val search = binding.search as SearchView
-        val db = AppDatabase
-            .instancia(context ?: throw IllegalArgumentException("Contexto Invalido "))
-        search.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
-
-
-
-            override fun onQueryTextChange(newQuery: String): Boolean {
-                // Atualizar a lista de resultados com base na nova consulta
-                lista = db.artifactDao().getAll()
-                val filtro = lista.filter { item ->
-                    item.nomeId == newQuery
-                }
-
-                return true
-            }
-
-            override fun onQueryTextSubmit(query: String): Boolean {
-                findNavController().navigate(R.id.cont_cadastro_fragment)
-                return false
-            }
-
-
-        })
+        db = AppDatabase.instancia(Cont)
+        confiReCyclerView()
+        configSearch()
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val db = AppDatabase
-            .instancia(context ?: throw IllegalArgumentException("Contexto Invalido "))
 
+    }
 
+    private fun confiReCyclerView(){
+        binding.searchLista.run {
+            lista = listOf()
+            adaptado = AdapterArtifact(Cont, lista)
+            adapter = adaptado
+            layoutManager = LinearLayoutManager(Cont)
+        }
+    }
+
+    private fun configSearch(){
+        binding.searchEscopo.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
+
+            override fun onQueryTextChange(newQuery: String): Boolean {
+                return filtro(newQuery)
+            }
+            override fun onQueryTextSubmit(query: String): Boolean {
+                return false
+            }
+        })
+    }
+
+    private fun filtro(busca: String):Boolean{
+        val list: MutableList<Artifact> = mutableListOf()
+        if (busca != null){
+            lista = db.artifactDao().getAll()
+            for(i in lista){
+                if (i.nomeId.lowercase(Locale.ROOT).contains(busca)){
+                    list.add(i)
+                }
+            }
+            if (list.isEmpty()){
+                list.clear() }
+            adaptado.atualiza(list)
+            return true
+        }else {
+            return false
+        }
     }
 
 }
