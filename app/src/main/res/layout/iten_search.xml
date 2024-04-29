@@ -7,9 +7,10 @@
 
     <ImageView
         android:id="@+id/item_search_icon"
-        android:layout_width="44dp"
-        android:layout_height="44dp"
-        android:layout_margin="8dp"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginVertical="8dp"
+        android:layout_marginStart="16dp"
         android:src="@drawable/icon_artifact"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,7 +21,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:textAppearance="?attr/textAppearanceTitleLarge"
+        android:textAppearance="?attr/textAppearanceTitleMedium"
         android:textColor="@color/azul"
         app:layout_constraintBottom_toBottomOf="@+id/item_search_icon"
         app:layout_constraintEnd_toEndOf="parent"

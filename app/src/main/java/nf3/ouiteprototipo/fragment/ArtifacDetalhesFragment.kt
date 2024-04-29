@@ -32,9 +32,9 @@ class ArtifacDetalhesFragment :Fragment(R.layout.card_artifact){
             throw IllegalArgumentException ("Artifact veio Vazio")
 
         val artifact = db.artifactDao().getId(id)
-        binding.artifactTextViewWay.text = artifact?.caminho
-        binding.detalhesTextViewTitle.text = artifact?.nomeId
-        binding.textViewArtifactDetalhes.text = artifact?.descricao
+        binding.cardArtifactCaminho.text = artifact?.caminho
+        binding.cardArtifactTitulo.text = artifact?.nomeId
+        binding.cardArtifactCardDetalhes.text = artifact?.descricao
 
     }
 }

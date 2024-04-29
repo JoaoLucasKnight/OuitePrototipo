@@ -5,10 +5,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-
-
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/detalhes_contCard"
+        android:id="@+id/cardDetalhes"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginVertical="32dp"
@@ -17,15 +15,13 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        >
+        app:layout_constraintEnd_toEndOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-
             <TextView
-                android:id="@+id/detalhes_textView_title"
+                android:id="@+id/cardDetalhes_titulo"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_marginTop="16dp"
@@ -36,10 +32,10 @@
                 android:textSize="24dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="parent"/>
 
             <TextView
-                android:id="@+id/detalhes_textView_nota"
+                android:id="@+id/cardDetalhes_nota"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/poppins"
@@ -49,26 +45,24 @@
                 android:text="Nota:"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detalhes_textView_title" />
+                app:layout_constraintTop_toBottomOf="@+id/cardDetalhes_titulo" />
 
             <com.google.android.material.card.MaterialCardView
-                android:id="@+id/detalhes_cardCont_notas"
+                android:id="@+id/cardDetalhes_card"
                 android:layout_width="match_parent"
                 android:backgroundTint="?attr/colorOnPrimary"
                 android:layout_height="80dp"
                 android:layout_marginHorizontal="16dp"
                 android:layout_marginTop="16dp"
-
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/detalhes_textView_nota">
+                app:layout_constraintTop_toBottomOf="@+id/cardDetalhes_nota">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-
                     <TextView
-                        android:id="@+id/detalhes_textView_anotacao"
+                        android:id="@+id/cardDetalhes_card_anotacao"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginHorizontal="16dp"
@@ -78,38 +72,31 @@
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
-
-
                 </androidx.constraintlayout.widget.ConstraintLayout>
-
             </com.google.android.material.card.MaterialCardView>
-
             <TextView
-                android:id="@+id/detalhes_textView_caminho"
+                android:id="@+id/cardDetalhes_caminho"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins"
                 android:text="Caminho:"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
-                app:layout_constraintTop_toBottomOf="@id/detalhes_cardCont_notas" />
-
-
+                app:layout_constraintStart_toStartOf="@+id/cardDetalhes_nota"
+                app:layout_constraintTop_toBottomOf="@id/cardDetalhes_card" />
             <TextView
-                android:id="@+id/input_caminho"
+                android:id="@+id/cardDetalhes_input_caminho"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:fontFamily="@font/poppins_light"
                 android:textAppearance="?attr/textAppearanceBodyMedium"
-                app:layout_constraintEnd_toEndOf="@+id/detalhes_cardCont_notas"
-                app:layout_constraintStart_toStartOf="@+id/detalhes_textView_nota"
-                app:layout_constraintTop_toBottomOf="@id/detalhes_textView_caminho"
+                app:layout_constraintEnd_toEndOf="@+id/cardDetalhes_card"
+                app:layout_constraintStart_toStartOf="@+id/cardDetalhes_nota"
+                app:layout_constraintTop_toBottomOf="@id/cardDetalhes_caminho"
                 tools:text="Caminho..." />
-
             <Button
-                android:id="@+id/editar_btt"
+                android:id="@+id/cardDetalhes_btt_editar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="48dp"
@@ -120,22 +107,21 @@
                 android:text="Editar"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/input_caminho" />
-
+                app:layout_constraintTop_toBottomOf="@id/cardDetalhes_input_caminho" />
             <Button
-                android:id="@+id/remover_btt"
+                android:id="@+id/cardDetalhes_btt_deletar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="32dp"
                 android:layout_marginEnd="48dp"
-                android:text="Remover"
+                android:text="Deletar"
                 android:fontFamily="@font/poppins"
                 android:backgroundTint="?attr/colorSecondary"
                 android:textColor="?attr/colorOnSecondary"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent
-"
-                app:layout_constraintTop_toBottomOf="@id/input_caminho" />
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cardDetalhes_input_caminho"
+                />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>

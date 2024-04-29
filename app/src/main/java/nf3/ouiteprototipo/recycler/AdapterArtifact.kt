@@ -7,17 +7,35 @@ import androidx.recyclerview.widget.RecyclerView
 import nf3.ouiteprototipo.databinding.ItenSearchBinding
 import nf3.ouiteprototipo.model.Artifact
 
+
 class AdapterArtifact(
     private val context: Context,
-    lista: List<Artifact>
-
+    lista: List<Artifact>,
+    var events: Eventos<Artifact> =
+        object :Eventos<Artifact>{
+            override fun pressiona(artifact: Artifact){
+            }
+            override fun clica(artifact: Artifact){
+            }
+        }
 ): RecyclerView.Adapter<AdapterArtifact.ViewHolder>() {
+
     private val lista = lista.toMutableList()
 
-    class ViewHolder(
+    inner class ViewHolder(
         private val binding: ItenSearchBinding
     ): RecyclerView.ViewHolder(binding.root){
+
+        private lateinit var artifact: Artifact
+
+        init {
+            binding.root.setOnClickListener {
+                artifact.let { events.clica(it) }
+            }
+        }
+
         fun vincula(artifact: Artifact){
+            this.artifact = artifact
             val nome = binding.itemSearchNome
             nome.text = artifact.nomeId
         }

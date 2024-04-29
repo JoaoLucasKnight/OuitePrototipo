@@ -34,14 +34,14 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
             "Space" -> {
                 val space = db.spaceDao().getId(name)
                 if(space != null) {
-                    val titulo = binding.detalhesTextViewTitle
+                    val titulo = binding.cardDetalhesTitulo
                     titulo.text = space.nomeId
-                    val caminho = binding.inputCaminho
+                    val caminho = binding.cardDetalhesInputCaminho
                     caminho.text = space.caminho
-                    val notas = binding.detalhesTextViewAnotacao
+                    val notas = binding.cardDetalhesNota
                     notas.text = space.descricao
 
-                    binding.editarBtt.setOnClickListener{
+                    binding.cardDetalhesBttEditar.setOnClickListener{
                         val args = Bundle().apply {
                             putString("name", space.nomeId )
                             putString("tipo", "Space")
@@ -49,7 +49,7 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
                         findNavController().navigate(R.id.cont_editar_fragment,args)
                     }
 
-                    binding.removerBtt.setOnClickListener {
+                    binding.cardDetalhesBttDeletar.setOnClickListener {
                         db.spaceDao().delete(space)
                     }
 
@@ -58,14 +58,14 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
             "Box" -> {
                val box = db.boxDao().getId(name)
                if (box != null){
-                   val titulo = binding.detalhesTextViewTitle
+                   val titulo = binding.cardDetalhesTitulo
                    titulo.text = box.nomeId
-                   val caminho = binding.inputCaminho
+                   val caminho = binding.cardDetalhesInputCaminho
                    caminho.text = box.caminho
-                   val notas = binding.detalhesTextViewAnotacao
+                   val notas = binding.cardDetalhesNota
                    notas.text = box.descricao
 
-                   binding.editarBtt.setOnClickListener{
+                   binding.cardDetalhesBttEditar.setOnClickListener{
                        val args = Bundle().apply {
                            putString("name", box.nomeId )
                            putString("tipo", "Box")
@@ -73,7 +73,7 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
                        findNavController().navigate(R.id.cont_editar_fragment,args)
                    }
 
-                   binding.removerBtt.setOnClickListener {
+                   binding.cardDetalhesBttDeletar.setOnClickListener {
                        db.boxDao().delete(box)
                        findNavController().navigateUp()
                    }

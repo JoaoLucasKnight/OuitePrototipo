@@ -29,7 +29,7 @@ class CadastroFragment: Fragment (R.layout.cadastro) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.cadastroInputImg.setImageResource(R.drawable.perfil)
+        binding.cadastroImgPerfil.setImageResource(R.drawable.perfil)
 
         binding.cadastroInputNome.setText(User.nome)
         binding.cadastroInputEmail.setText(User.email)

@@ -32,11 +32,11 @@ class EditarFragment : Fragment(R.layout.editar_from){
         val name = arguments?.getString("name")?:""
         val tipo = arguments?.getString("tipo")?:""
 
-        binding.textViewTipo.text = "Editar: $tipo - $name"
+        binding.editarHead.text = "Editar: $tipo - $name"
 
-        var nome = binding.inputNome
-        var pai = binding.inputPai
-        var desc = binding.inputDescricao
+        var nome = binding.editarInputNome
+        var pai = binding.editarInputPai
+        var desc = binding.editarInputDescricao
 
         when(tipo){
             "Space" ->{
@@ -45,8 +45,12 @@ class EditarFragment : Fragment(R.layout.editar_from){
                     nome.setText(space.nomeId)
                     pai.setText(space.paiNameId)
                     desc.setText(space.descricao)
-                    binding.addEditarBtt.setOnClickListener{
+                    binding.editarBttEditar.setOnClickListener{
                         db.spaceDao().up(space)
+                        findNavController().navigateUp()
+                    }
+                    binding.editarBttDeletar.setOnClickListener {
+                        db.spaceDao().delete(space)
                         findNavController().navigateUp()
                     }
                 }
@@ -58,8 +62,12 @@ class EditarFragment : Fragment(R.layout.editar_from){
                     nome.setText(box.nomeId)
                     pai.setText(box.paiNameId)
                     desc.setText(box.descricao)
-                    binding.addEditarBtt.setOnClickListener{
+                    binding.editarBttEditar.setOnClickListener{
                         db.boxDao().up(box)
+                        findNavController().navigateUp()
+                    }
+                    binding.editarBttDeletar.setOnClickListener {
+                        db.boxDao().delete(box)
                         findNavController().navigateUp()
                     }
                 }
@@ -71,8 +79,12 @@ class EditarFragment : Fragment(R.layout.editar_from){
                     pai.setText(artifact.paiNameId)
                     desc.setText(artifact.descricao)
 
-                    binding.addEditarBtt.setOnClickListener{
+                    binding.editarBttEditar.setOnClickListener{
                         db.artifactDao().up(artifact)
+                        findNavController().navigateUp()
+                    }
+                    binding.editarBttDeletar.setOnClickListener {
+                        db.artifactDao().delete(artifact)
                         findNavController().navigateUp()
                     }
                 }

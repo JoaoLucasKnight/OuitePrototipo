@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/cardDefaut"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:elevation="2dp"
@@ -17,31 +18,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:strokeWidth="2dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
-
-            <!-- Media -->
             <ImageView
-                android:id="@+id/iconCard"
+                android:id="@+id/cardDefaut_icon"
                 android:layout_width="27dp"
                 android:layout_height="32dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
                 android:scaleType="centerCrop"
                 tools:srcCompat="@drawable/icon_space" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:padding="16dp">
-
-                <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/card_default_nome"
+                    android:id="@+id/cardDefaut_nomeId"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
@@ -50,9 +45,8 @@
                     android:textAppearance="?attr/textAppearanceBodySmall"
                     android:textColor="@color/azul"
                     tools:text="Quarto" />
-
                 <TextView
-                    android:id="@+id/card_default_caminho"
+                    android:id="@+id/cardDefaut_caminho"
                     android:layout_width="80dp"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -63,10 +57,6 @@
                     android:textColor="?attr/colorOutlineVariant"
                     tools:text="1 - Lugar / 3 Box" />
             </LinearLayout>
-
-            <!-- Buttons -->
-
-
         </LinearLayout>
 
     </com.google.android.material.card.MaterialCardView>

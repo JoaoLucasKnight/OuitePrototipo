@@ -12,6 +12,7 @@ import nf3.ouiteprototipo.R
 import nf3.ouiteprototipo.databinding.SpacesBinding
 import nf3.ouiteprototipo.model.Space
 import nf3.ouiteprototipo.recycler.AdapterSpace
+import nf3.ouiteprototipo.recycler.Eventos
 import nf3.ouiteprototipo.room.AppDatabase
 
 class ListSpaces: Fragment(R.layout.spaces) {
@@ -39,7 +40,7 @@ class ListSpaces: Fragment(R.layout.spaces) {
 
         binding.listaSpace.run {
 
-            adaptado.eventSpace = object : AdapterSpace.EventSpace{
+            adaptado.eventSpace = object : Eventos<Space>{
                 override fun pressiona(space: Space) {
                     val args = Bundle().apply {
                         putString("name", space.nomeId)

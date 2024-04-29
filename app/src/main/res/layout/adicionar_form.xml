@@ -7,7 +7,7 @@
     >
 
     <TextView
-        android:id="@+id/textView_tipo"
+        android:id="@+id/adicionar_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
@@ -15,18 +15,18 @@
         android:textColor="?attr/colorSecondaryContainer"
         android:fontFamily="@font/poppins"
         android:textAppearance="?attr/textAppearanceTitleLarge"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
         app:layout_constraintTop_toTopOf="parent" />
 
     <RadioGroup
-        android:id="@+id/radio_cont"
+        android:id="@+id/adcionar_radio_cont"
         android:layout_width="match_parent"
         android:layout_height="100dp"
         android:checkedButton="@id/space_radio_btt"
         android:layout_marginHorizontal="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_tipo"
+        app:layout_constraintTop_toBottomOf="@+id/adicionar_title"
         android:orientation="horizontal">
         <RadioButton
             android:id="@+id/space_radio_btt"
@@ -56,7 +56,7 @@
     </RadioGroup>
 
     <TextView
-        android:id="@+id/textView_nome"
+        android:id="@+id/adcionar_nome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -64,27 +64,27 @@
         android:textColor="?attr/colorSecondaryContainer"
         android:text="Nome"
         android:textAppearance="?attr/textAppearanceTitleLarge"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/radio_cont" />
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_radio_cont" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_nome"
+        android:id="@+id/adcionar_layout_nome"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/radio_cont"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/textView_nome">
+        app:layout_constraintEnd_toEndOf="@+id/adcionar_radio_cont"
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_nome">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_nome"
+            android:id="@+id/adcionar_input_nome"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <TextView
-        android:id="@+id/textView_pai"
+        android:id="@+id/adcionar_pai"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
@@ -92,20 +92,20 @@
         android:text="Lugar ou caixa, que ele está"
         android:textAppearance="?attr/textAppearanceTitleLarge"
         android:textColor="?attr/colorSecondaryContainer"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/layout_nome" />
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_layout_nome" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layout_pai"
+        android:id="@+id/adcionar_layout_pai"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/radio_cont"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/textView_pai">
+        app:layout_constraintEnd_toEndOf="@+id/adcionar_radio_cont"
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_pai">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_pai"
+            android:id="@+id/adcionar_input_pai"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
@@ -120,27 +120,27 @@
         android:text="Notas ou foto"
         android:textAppearance="?attr/textAppearanceTitleLarge"
         android:textColor="?attr/colorSecondaryContainer"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
-        app:layout_constraintTop_toBottomOf="@+id/layout_pai" />
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_layout_pai" />
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/layou_descricao"
+        android:id="@+id/adcionar_layou_descricao"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        app:layout_constraintEnd_toEndOf="@+id/radio_cont"
-        app:layout_constraintStart_toStartOf="@+id/radio_cont"
+        app:layout_constraintEnd_toEndOf="@+id/adcionar_radio_cont"
+        app:layout_constraintStart_toStartOf="@+id/adcionar_radio_cont"
         app:layout_constraintTop_toBottomOf="@+id/textView_descricao">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/input_descricao"
+            android:id="@+id/adcionar_input_descricao"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:fontFamily="@font/poppins" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/add_salvar_btt"
+        android:id="@+id/adcionar_btt_salvar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/poppins"
@@ -148,7 +148,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/layou_descricao" />
+        app:layout_constraintTop_toBottomOf="@+id/adcionar_layou_descricao" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

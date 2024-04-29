@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:maxHeight="228dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.appcompat.widget.SearchView
@@ -15,14 +14,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:queryHint="Encontrar..." />
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/search_lista"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/search_escopo"
-        tools:listitem="@layout/iten_search"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/search_lista"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintHeight_max="154dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_escopo"
+            tools:listitem="@layout/iten_search" />
 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

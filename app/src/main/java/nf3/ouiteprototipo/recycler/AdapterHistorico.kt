@@ -18,11 +18,11 @@ class AdapterHistorico(
         private val binding: CardHistoricoBinding
     ): RecyclerView.ViewHolder(binding.root){
         fun vincula(historico: Historico){
-            val title = binding.cardHistoricoTitle
+            val title = binding.cardHistoricoTitulo
             title.text = historico.titulo
             val caminho = binding.cardHistoricoCaminho
             caminho.text = historico.caminho
-            val data = binding.cardDefaultData
+            val data = binding.cardHistoricoData
             data.text = historico.data
         }
     }

@@ -36,7 +36,6 @@ class AdapterEscopo(
         fun spaceClica(space: Space)
         fun boxPressiona(box: Box)
         fun boxClica(box: Box)
-
         fun artifactPressiona(artifact: Artifact)
         fun artifactClica(artifact: Artifact)
     }
@@ -67,27 +66,27 @@ class AdapterEscopo(
             }
         }
         fun vincula(space: Space){
-            binding.iconCard.setImageResource(R.drawable.icon_space)
+            binding.cardDefautIcon.setImageResource(R.drawable.icon_space)
             this.space = space
-            val nome = binding.cardDefaultNome
+            val nome = binding.cardDefautNomeId
             nome.text = space.nomeId
-            val caminho = binding.cardDefaultCaminho
+            val caminho = binding.cardDefautCaminho
             caminho.text = space.caminho
         }
         fun vincula(box: Box){
-            binding.iconCard.setImageResource(R.drawable.icon_box)
+            binding.cardDefautIcon.setImageResource(R.drawable.icon_box)
             this.box = box
-            val nome = binding.cardDefaultNome
+            val nome = binding.cardDefautNomeId
             nome.text = box.nomeId
-            val caminho = binding.cardDefaultCaminho
+            val caminho = binding.cardDefautCaminho
             caminho.text = box.caminho
         }
         fun vincula(artifact: Artifact){
-            binding.iconCard.setImageResource(R.drawable.icon_artifact)
+            binding.cardDefautIcon.setImageResource(R.drawable.icon_artifact)
             this.artifact = artifact
-            val nome = binding.cardDefaultNome
+            val nome = binding.cardDefautNomeId
             nome.text = artifact.nomeId
-            val caminho = binding.cardDefaultCaminho
+            val caminho = binding.cardDefautCaminho
             caminho.text = artifact.caminho
         }
     }

@@ -11,8 +11,8 @@ import nf3.ouiteprototipo.model.Space
 class AdapterSpace(
     private val context: Context,
     lista: List<Space>,
-    var eventSpace: EventSpace =
-        object :EventSpace{
+    var eventSpace: Eventos<Space> =
+        object :Eventos<Space>{
             override fun pressiona(space: Space){
             }
             override fun clica(space: Space){
@@ -21,11 +21,6 @@ class AdapterSpace(
 ): RecyclerView.Adapter<AdapterSpace.ViewHolder>() {
 
     private val lista = lista.toMutableList()
-
-    interface EventSpace{
-        fun pressiona(space: Space)
-        fun clica(space: Space)
-    }
 
     inner class ViewHolder(
 
@@ -44,11 +39,11 @@ class AdapterSpace(
         }
 
         fun vincula(space: Space){
-            binding.iconCard.setImageResource(R.drawable.icon_space)
+            binding.cardDefautIcon.setImageResource(R.drawable.icon_space)
             this.space = space
-            val nome = binding.cardDefaultNome
+            val nome = binding.cardDefautNomeId
             nome.text = space.nomeId
-            val caminho = binding.cardDefaultCaminho
+            val caminho = binding.cardDefautCaminho
             caminho.text = space.caminho
         }
     }

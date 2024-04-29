@@ -5,7 +5,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
+        android:id="@+id/cardHistorico"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="8dp"
@@ -22,6 +22,7 @@
 
             <!-- Media -->
             <ImageView
+                android:id="@+id/cardHistorico_icon"
                 android:layout_width="46dp"
                 android:layout_height="52dp"
                 android:layout_marginStart="16dp"
@@ -37,7 +38,7 @@
 
                 <!-- Title, secondary and supporting text -->
                 <TextView
-                    android:id="@+id/card_historico_title"
+                    android:id="@+id/cardHistorico_titulo"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/poppins_medium"
@@ -46,7 +47,7 @@
                     android:textAppearance="?attr/textAppearanceTitleMedium" />
 
                 <TextView
-                    android:id="@+id/card_historico_caminho"
+                    android:id="@+id/cardHistorico_caminho"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="8dp"
@@ -56,7 +57,7 @@
                     android:textColor="?android:attr/textColorSecondary" />
             </LinearLayout>
             <TextView
-                android:id="@+id/card_default_data"
+                android:id="@+id/cardHistorico_data"
                 android:layout_width="62dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"

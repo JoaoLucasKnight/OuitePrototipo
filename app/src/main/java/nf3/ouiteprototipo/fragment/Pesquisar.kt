@@ -14,6 +14,7 @@ import nf3.ouiteprototipo.databinding.SearchBinding
 import nf3.ouiteprototipo.model.Artifact
 import nf3.ouiteprototipo.recycler.AdapterArtifact
 import nf3.ouiteprototipo.recycler.AdapterSpace
+import nf3.ouiteprototipo.recycler.Eventos
 import nf3.ouiteprototipo.room.AppDatabase
 import java.util.Locale
 
@@ -40,7 +41,6 @@ class Pesquisar: Fragment(R.layout.search) {
         db = AppDatabase.instancia(Cont)
         confiReCyclerView()
         configSearch()
-
         return binding.root
     }
 
@@ -53,6 +53,18 @@ class Pesquisar: Fragment(R.layout.search) {
         binding.searchLista.run {
             lista = listOf()
             adaptado = AdapterArtifact(Cont, lista)
+            adaptado.events = object : Eventos<Artifact>{
+                override fun clica(item: Artifact) {
+                    val args = Bundle().apply{
+                        putString("id", item.nomeId)
+                    }
+                    findNavController().navigate(R.id.cont_ArtifactDetalhes_fragment, args)
+                }
+
+                override fun pressiona(item: Artifact) {
+
+                }
+            }
             adapter = adaptado
             layoutManager = LinearLayoutManager(Cont)
         }
@@ -62,15 +74,22 @@ class Pesquisar: Fragment(R.layout.search) {
         binding.searchEscopo.setOnQueryTextListener(object : SearchView.OnQueryTextListener{
 
             override fun onQueryTextChange(newQuery: String): Boolean {
-                return filtro(newQuery)
+                binding.searchLista.visibility = View.VISIBLE
+                filtro(newQuery)
+                return true
             }
             override fun onQueryTextSubmit(query: String): Boolean {
                 return false
             }
         })
+        binding.searchEscopo.setOnCloseListener{
+            binding.searchLista.visibility = View.GONE
+            true
+        }
+
     }
 
-    private fun filtro(busca: String):Boolean{
+    private fun filtro(busca: String){
         val list: MutableList<Artifact> = mutableListOf()
         if (busca != null){
             lista = db.artifactDao().getAll()
@@ -82,9 +101,7 @@ class Pesquisar: Fragment(R.layout.search) {
             if (list.isEmpty()){
                 list.clear() }
             adaptado.atualiza(list)
-            return true
-        }else {
-            return false
+
         }
     }
 

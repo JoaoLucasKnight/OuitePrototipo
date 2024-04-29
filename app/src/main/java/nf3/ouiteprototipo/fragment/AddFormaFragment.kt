@@ -31,7 +31,7 @@ class AddFormaFragment: Fragment(R.layout.adicionar_form) {
         super.onViewCreated(view, savedInstanceState)
         val db = AppDatabase
             .instancia(context ?: throw IllegalArgumentException("Contexto Invalido "))
-        binding.addSalvarBtt.setOnClickListener {
+        binding.adcionarBttSalvar.setOnClickListener {
             when {
                 binding.artifactRadioBtt.isChecked -> {
                     //valida
@@ -62,25 +62,25 @@ class AddFormaFragment: Fragment(R.layout.adicionar_form) {
 }
 
 fun validaArtifact(binding: AdicionarFormBinding,  db: AppDatabase): Artifact? {
-        val nome = binding.inputNome.text.toString()
-        val pai = binding.inputPai.text.toString()
-        val desc = binding.inputDescricao.text.toString()
+        val nome = binding.adcionarInputNome.text.toString()
+        val pai = binding.adcionarInputPai.text.toString()
+        val desc = binding.adcionarInputDescricao.text.toString()
         var caminho: String = ""
 
         // nome vazio?
         if(nome.isEmpty()){
-            binding.layoutNome.error = "Campo Vazio"
+            binding.adcionarLayoutNome.error = "Campo Vazio"
             return null
             // tem outro igual?
             }else if (db.artifactDao().getId(nome) != null){
-                binding.layoutNome.error = "Artifact ja existe"
+                binding.adcionarLayoutNome.error = "Artifact ja existe"
                 return null
             }else {
-                binding.layoutNome.error = null
+                binding.adcionarLayoutNome.error = null
             }
         // pai vazio?
         if (pai.isEmpty()){
-            binding.layoutPai.error = "Campo Vazio"
+            binding.adcionarLayoutPai.error = "Campo Vazio"
             return null
             //então
             }else {
@@ -92,10 +92,10 @@ fun validaArtifact(binding: AdicionarFormBinding,  db: AppDatabase): Artifact? {
                          caminho = "${db.spaceDao().getCaminho(pai)}>$nome"
                         // pai não existe
                         } else {
-                            binding.layoutPai.error = "Space ou Box não existe"
+                            binding.adcionarLayoutPai.error = "Space ou Box não existe"
                             return null
                         }
-            binding.layoutPai.error = null
+            binding.adcionarLayoutPai.error = null
             }
 
     return Artifact(
@@ -106,25 +106,25 @@ fun validaArtifact(binding: AdicionarFormBinding,  db: AppDatabase): Artifact? {
     )
 }
 fun validaBox(binding: AdicionarFormBinding,  db: AppDatabase): Box?{
-    val nome = binding.inputNome.text.toString()
-    val pai = binding.inputPai.text.toString()
-    val desc = binding.inputDescricao.text.toString()
+    val nome = binding.adcionarInputNome.text.toString()
+    val pai = binding.adcionarInputPai.text.toString()
+    val desc = binding.adcionarInputDescricao.text.toString()
     var caminho: String = ""
 
     // nome vazio?
     if(nome.isEmpty()){
-        binding.layoutNome.error = "Campo Vazio"
+        binding.adcionarLayoutNome.error = "Campo Vazio"
         return null
         // tem outro igual?
     }else if (db.boxDao().getId(nome) != null){
-        binding.layoutNome.error = "Box ja existe"
+        binding.adcionarLayoutNome.error = "Box ja existe"
         return null
     }else {
-        binding.layoutNome.error = null
+        binding.adcionarLayoutNome.error = null
     }
     // pai vazio?
     if (pai.isEmpty()){
-        binding.layoutPai.error = "Campo Vazio"
+        binding.adcionarLayoutPai.error = "Campo Vazio"
         return null
         //então
     }else {
@@ -136,10 +136,10 @@ fun validaBox(binding: AdicionarFormBinding,  db: AppDatabase): Box?{
             caminho = "${db.spaceDao().getCaminho(pai)}>$nome"
             // pai não existe
         } else {
-            binding.layoutPai.error = "Space ou Box não existe"
+            binding.adcionarLayoutPai.error = "Space ou Box não existe"
             return null
         }
-        binding.layoutPai.error = null
+        binding.adcionarLayoutPai.error = null
     }
 
     return Box(
@@ -150,21 +150,21 @@ fun validaBox(binding: AdicionarFormBinding,  db: AppDatabase): Box?{
     )
 }
 fun validaSpace(binding: AdicionarFormBinding,  db: AppDatabase): Space?{
-    val nome = binding.inputNome.text.toString()
-    val pai = binding.inputPai.text.toString()
-    val desc = binding.inputDescricao.text.toString()
+    val nome = binding.adcionarInputNome.text.toString()
+    val pai = binding.adcionarInputPai.text.toString()
+    val desc = binding.adcionarInputDescricao.text.toString()
     var caminho: String = ""
 
     // nome vazio?
     if(nome.isEmpty()){
-        binding.layoutNome.error = "Campo Vazio"
+        binding.adcionarLayoutNome.error = "Campo Vazio"
         return null
         // tem outro igual?
     }else if (db.spaceDao().getId(nome) != null){
-        binding.layoutNome.error = "Space ja existe"
+        binding.adcionarLayoutNome.error = "Space ja existe"
         return null
     }else {
-        binding.layoutNome.error = null
+        binding.adcionarLayoutNome.error = null
     }
 
     // pai vazio?
@@ -173,12 +173,12 @@ fun validaSpace(binding: AdicionarFormBinding,  db: AppDatabase): Space?{
             caminho = "${db.spaceDao().getCaminho(pai)}>$nome"
         // pai não existe
         } else {
-            binding.layoutPai.error = "Space não existe"
+            binding.adcionarLayoutPai.error = "Space não existe"
             return null
         }
     }else {
         caminho = nome
-        binding.layoutPai.error = null
+        binding.adcionarLayoutPai.error = null
     }
     return Space(
         nomeId = nome,

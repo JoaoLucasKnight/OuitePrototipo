@@ -6,6 +6,7 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import androidx.room.Upsert
 import nf3.ouiteprototipo.model.Artifact
 import nf3.ouiteprototipo.model.Box
 import nf3.ouiteprototipo.model.Space
@@ -56,7 +57,7 @@ interface ArtifactDAO {
     fun salvar(artifact: Artifact)
     @Delete
     fun delete(artifact: Artifact)
-    @Update
+    @Upsert
     fun up(artifact: Artifact)
 
     @Query("SELECT * FROM Artifact WHERE nomeId = :id")
