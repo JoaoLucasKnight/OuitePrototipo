@@ -51,7 +51,7 @@
         android:id="@+id/cont_editar_fragment"
         android:name="nf3.ouiteprototipo.fragment.EditarFragment"
         android:label="Editar"
-        tools:layout="@layout/editar_from"
+        tools:layout="@layout/editar_form"
         />
 
 

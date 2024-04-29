@@ -38,7 +38,7 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
                     titulo.text = space.nomeId
                     val caminho = binding.cardDetalhesInputCaminho
                     caminho.text = space.caminho
-                    val notas = binding.cardDetalhesNota
+                    val notas = binding.cardDetalhesCardAnotacao
                     notas.text = space.descricao
 
                     binding.cardDetalhesBttEditar.setOnClickListener{
@@ -62,7 +62,7 @@ class SpaceBoxDetalhes: Fragment (R.layout.card_detalhes) {
                    titulo.text = box.nomeId
                    val caminho = binding.cardDetalhesInputCaminho
                    caminho.text = box.caminho
-                   val notas = binding.cardDetalhesNota
+                   val notas = binding.cardDetalhesCardAnotacao
                    notas.text = box.descricao
 
                    binding.cardDetalhesBttEditar.setOnClickListener{

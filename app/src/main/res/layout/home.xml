@@ -11,13 +11,13 @@
         android:id="@+id/welcome"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:fontFamily="@font/poppins_light"
-        android:layout_marginStart="32dp"
-        tools:text="Bem vindo ao Ouite"
         android:textAppearance="?attr/textAppearanceTitleMedium"
         app:layout_constraintBottom_toBottomOf="@+id/homeImgPerfil"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/homeImgPerfil" />
+        app:layout_constraintTop_toTopOf="@+id/homeImgPerfil"
+        tools:text="Bem vindo ao Ouite" />
 
     <ImageView
         android:id="@+id/homeImgPerfil"
@@ -25,7 +25,7 @@
         android:src="@drawable/perfil"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginEnd="32dp"
+        android:layout_marginEnd="16dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -44,27 +44,28 @@
          />
 
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragSpace"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
-        app:layout_constraintStart_toStartOf="@+id/welcome"
-        app:layout_constraintTop_toBottomOf="@+id/frag_pesquisa"
-        tools:layout="@layout/spaces" />
-
     <!--        tools:layout="@layout/historico" />-->
 
 
     <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/fragHistory"
+        android:id="@+id/fragSpace"
         android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/frag_pesquisa"
+        tools:layout="@layout/spaces" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/fragHistory"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="16dp"
         app:layout_constraintTop_toBottomOf="@+id/fragSpace"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/homeImgPerfil"
-        app:layout_constraintStart_toStartOf="@+id/welcome"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         tools:layout="@layout/historico"
         />
 

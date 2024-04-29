@@ -7,20 +7,19 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import nf3.ouiteprototipo.R
-import nf3.ouiteprototipo.databinding.EditarFromBinding
-import nf3.ouiteprototipo.model.Space
+import nf3.ouiteprototipo.databinding.EditarFormBinding
 import nf3.ouiteprototipo.room.AppDatabase
 
-class EditarFragment : Fragment(R.layout.editar_from){
+class EditarFragment : Fragment(R.layout.editar_form){
 
-    private lateinit var binding: EditarFromBinding
+    private lateinit var binding: EditarFormBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = EditarFromBinding.inflate(inflater, container, false)
+        binding = EditarFormBinding.inflate(inflater, container, false)
         return binding.root
     }
 
