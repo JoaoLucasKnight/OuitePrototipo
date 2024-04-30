@@ -25,6 +25,7 @@ class AddBtt: Fragment(R.layout.add) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.fragAdd.setOnClickListener{
+            // Implementar qunado quando tiver em escopo pegar a localidade e ja passar para o pai
             findNavController().navigate(R.id.cont_addForm_fragment)
         }
     }

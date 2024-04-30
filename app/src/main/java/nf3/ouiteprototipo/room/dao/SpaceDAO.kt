@@ -23,7 +23,7 @@ interface SpaceDAO {
     fun getPai(id: String): List<Space>
 
     @Query("SELECT * FROM Space WHERE nomeId = :id")
-    fun getId(id: String): Space?
+    fun getId(id: String?): Space?
     @Query("SELECT caminho FROM Space  WHERE nomeId = :id")
     fun getCaminho(id: String): String?
     @Insert
@@ -32,6 +32,7 @@ interface SpaceDAO {
     fun delete(space: Space)
     @Update
     fun up(space: Space)
+
 }
 
 @Dao
@@ -43,7 +44,7 @@ interface BoxDAO {
     @Update
     fun up(box: Box)
     @Query("SELECT * FROM Box WHERE nomeId = :id")
-    fun getId(id: String): Box?
+    fun getId(id: String?): Box?
     @Query("SELECT * FROM Box WHERE paiNameId = :id")
     fun getPai(id: String): List<Box>
 
